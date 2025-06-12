@@ -14,7 +14,9 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
 
       let uniqueUsername = null;
       if (name) {
-        const sanitized = name.replace(USERNAME_REPLACE_REGEXP, "").toLowerCase();
+        const sanitized = name
+          .replace(USERNAME_REPLACE_REGEXP, "")
+          .toLowerCase();
         uniqueUsername = sanitized;
 
         const existing = (
@@ -30,9 +32,7 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
 
         if (existing.length) {
           let suffix = "1";
-          while (
-            existing.some((u) => u === (sanitized + suffix))
-          ) {
+          while (existing.some((u) => u === sanitized + suffix)) {
             suffix = (Number(suffix) + 1).toString();
           }
           uniqueUsername = sanitized + suffix;

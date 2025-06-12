@@ -275,8 +275,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         action: (ctrl) =>
           openLink(`/${session.data?.user?.username || ""}`, ctrl),
         shouldShow: () =>
-          window.location.pathname !==
-          `/${session.data?.user?.username || ""}`,
+          window.location.pathname !== `/${session.data?.user?.username || ""}`,
       });
       total.push({
         icon: <IconSettings />,

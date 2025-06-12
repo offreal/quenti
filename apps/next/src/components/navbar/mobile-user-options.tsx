@@ -85,7 +85,7 @@ export const MobileUserOptions: React.FC<MobileUserOptionsProps> = ({
         <Button
           variant="outline"
           as={Link}
-                      href={`/${user.username}`}
+          href={`/${user.username}`}
           leftIcon={<IconUserCircle size={18} />}
         >
           Profile

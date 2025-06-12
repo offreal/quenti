@@ -87,7 +87,7 @@ export const UserMenu = () => {
         marginTop={2}
         shadow="lg"
       >
-                      <Link href={`/${user.username}`} passHref>
+        <Link href={`/${user.username}`} passHref>
           <MenuOption icon={<IconUser size={18} />} label="Profile" />
         </Link>
         <Link href="/settings" passHref>

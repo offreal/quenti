@@ -23,9 +23,7 @@
       "cache": false
     }
   },
-  "globalDependencies": [
-    "**/.env"
-  ],
+  "globalDependencies": ["**/.env"],
   "globalEnv": [
     "NODE_ENV",
     "PORT",
