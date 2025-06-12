@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useSession } from "next-auth/react";
 
 import { FrameLogo, Link } from "@quizfit/components";
 
@@ -51,6 +52,16 @@ const folder = {
 };
 
 export const EmptyDashboard = () => {
+  const { data: session } = useSession();
+
+  const handleCreateClick = () => {
+    if (!session?.user) {
+      // Redirect to login with callback to create page
+      window.location.href =
+        "/auth/login?callbackUrl=" + encodeURIComponent("/create");
+    }
+  };
+
   return (
     <Center
       w="full"
@@ -109,8 +120,9 @@ export const EmptyDashboard = () => {
             leftIcon={<IconPlus />}
             size="lg"
             shadow="lg"
-            as={Link}
-            href="/create"
+            as={session?.user ? Link : undefined}
+            href={session?.user ? "/create" : undefined}
+            onClick={!session?.user ? handleCreateClick : undefined}
             fontSize="md"
             rounded="xl"
           >

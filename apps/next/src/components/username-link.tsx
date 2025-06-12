@@ -13,7 +13,7 @@ export const UsernameLink: React.FC<
       transition="color 0.2s ease-in-out"
       _hover={{ color: highlight }}
       className="highlight-block"
-      href={`/@${props.username || ""}`}
+      href={`/${props.username || ""}`}
       {...props}
     >
       {props.username}

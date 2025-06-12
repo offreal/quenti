@@ -11,7 +11,7 @@ type GetOptions = {
 export const getHandler = async ({ ctx, input }: GetOptions) => {
   const user = await ctx.prisma.user.findUnique({
     where: {
-      username: input.username,
+      username: input.username.toLowerCase(),
     },
     include: {
       studySets: {

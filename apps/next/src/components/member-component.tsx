@@ -249,7 +249,7 @@ const Options: React.FC<
                   w="full"
                   h="full"
                   as={Link}
-                  href={`/@${user?.username || ""}`}
+                  href={`/${user?.username || ""}`}
                   display="flex"
                   alignItems="center"
                   justifyContent="center"

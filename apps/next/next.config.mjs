@@ -95,10 +95,6 @@ let config = {
   rewrites: async () => [
     ...(await getConsoleRewrites()),
     {
-      source: "/",
-      destination: "/home",
-    },
-    {
       source: "/:id(_[a-zA-Z0-9]{10})",
       destination: "/share-resolver/:id",
     },
@@ -107,23 +103,19 @@ let config = {
       destination: "/class-resolver/:id",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)",
-      destination: "/profile/:profile",
-    },
-    {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug",
       destination: "/profile/:profile/folders/:slug",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug/flashcards",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/flashcards",
       destination: "/profile/:profile/folders/:slug/flashcards",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug/match",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/match",
       destination: "/profile/:profile/folders/:slug/match",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug/match/leaderboard",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/match/leaderboard",
       destination: "/profile/:profile/folders/:slug/match/leaderboard",
     },
     {
@@ -169,6 +161,11 @@ let config = {
     {
       source: "/a/:id/:assignmentId/:path*",
       destination: "/classes/:id/assignments/:assignmentId/:path*",
+    },
+    // Profile routes (must be last to avoid conflicts)
+    {
+      source: "/:profile([a-zA-Z0-9-_]+)",
+      destination: "/profile/:profile",
     },
   ],
   productionBrowserSourceMaps: false,

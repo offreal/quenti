@@ -155,7 +155,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         });
       }
       for (const folder of data.folders) {
-        const url = `/@${folder.user.username}/folders/${
+        const url = `/${folder.user.username}/folders/${
           folder.slug ?? folder.id
         }`;
 
@@ -255,8 +255,8 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         icon: <IconHome />,
         name: "Home",
         label: "Navigate home",
-        action: (ctrl) => openLink(`/home`, ctrl),
-        shouldShow: () => window.location.pathname !== "/home",
+        action: (ctrl) => openLink(`/`, ctrl),
+        shouldShow: () => window.location.pathname !== "/",
       });
       if (me && me.orgMembership) {
         total.push({
@@ -273,10 +273,10 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         name: "Profile",
         label: "Navigate to your profile",
         action: (ctrl) =>
-          openLink(`/@${session.data?.user?.username || ""}`, ctrl),
+          openLink(`/${session.data?.user?.username || ""}`, ctrl),
         shouldShow: () =>
           window.location.pathname !==
-          `/@${session.data?.user?.username || ""}`,
+          `/${session.data?.user?.username || ""}`,
       });
       total.push({
         icon: <IconSettings />,

@@ -38,7 +38,7 @@ export const CreateFolderModal: React.FC<CreateFolderModalProps> = ({
       if (!childSetId) {
         onClose();
         await router.push(
-          `/@${session.data!.user!.username}/folders/${data.slug ?? data.id}`,
+          `/${session.data!.user!.username}/folders/${data.slug ?? data.id}`,
         );
       } else {
         menuEventChannel.emit("folderWithSetCreated", childSetId);

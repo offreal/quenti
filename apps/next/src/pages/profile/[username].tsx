@@ -30,11 +30,10 @@ const UserPage = ({ user }: inferSSRProps<typeof getServerSideProps>) => {
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   if (!db) return { props: { user: null } };
 
-  const _username = ctx.query?.username as string;
-  const username = _username.substring(1);
+  const username = ctx.query?.username as string;
 
   const user = await db?.query.user.findFirst({
-    where: eq(userTable.username, username),
+    where: eq(userTable.username, username.toLowerCase()),
     columns: {
       id: true,
       username: true,

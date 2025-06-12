@@ -35,7 +35,7 @@ export const DeleteOrganizationModal: React.FC<
     onSuccess: async ({ scheduled }) => {
       if (!scheduled) {
         await utils.user.me.invalidate();
-        await router.push("/home");
+        await router.push("/");
       } else {
         await utils.organizations.get.invalidate();
 

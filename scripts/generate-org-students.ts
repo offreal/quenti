@@ -33,7 +33,7 @@ const main = async () => {
 
     users.push({
       name,
-      username,
+      username: username.toLowerCase(),
       email: email.replace("@", `+${i}@`),
       image,
     });

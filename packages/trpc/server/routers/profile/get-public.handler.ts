@@ -11,7 +11,7 @@ type GetPublicOptions = {
 export const getPublicHandler = async ({ ctx, input }: GetPublicOptions) => {
   const user = await ctx.prisma.user.findUnique({
     where: {
-      username: input.username,
+      username: input.username.toLowerCase(),
     },
     select: {
       id: true,

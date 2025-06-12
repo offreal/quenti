@@ -61,7 +61,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
   const callbackUrl =
     typeof router.query.callbackUrl == "string"
       ? router.query.callbackUrl
-      : "/home";
+      : "/";
   const safeCallbackUrl = getSafeRedirectUrl(callbackUrl);
 
   React.useEffect(() => {

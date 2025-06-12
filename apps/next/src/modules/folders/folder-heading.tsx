@@ -53,7 +53,7 @@ export const FolderHeading = () => {
 
   const deleteFolder = api.folders.delete.useMutation({
     onSuccess: async () => {
-      await router.push("/home");
+      await router.push("/");
     },
   });
 

@@ -101,7 +101,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               fontSize="sm"
               onClick={async () => {
                 onClose();
-                await router.push("/home");
+                await router.push("/");
               }}
             >
               Home

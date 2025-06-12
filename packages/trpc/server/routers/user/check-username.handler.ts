@@ -28,7 +28,7 @@ export const checkUsernameHandler = async ({
 
   const user = await ctx.prisma.user.findUnique({
     where: {
-      username: input.username,
+      username: input.username.toLowerCase(),
     },
   });
 

@@ -46,7 +46,7 @@ export const HeadingArea = () => {
 
   const deleteSet = api.studySets.delete.useMutation({
     onSuccess: async () => {
-      await router.push("/home");
+      await router.push("/");
     },
   });
   const [deleteModalOpen, setDeleteModalOpen] = React.useState(false);

@@ -46,7 +46,7 @@ export const OrganizationInviteScreen = () => {
           render: Toast,
         });
       } else {
-        await router.push(`/home`);
+        await router.push(`/`);
       }
 
       await utils.user.me.invalidate();

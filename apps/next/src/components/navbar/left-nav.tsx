@@ -61,7 +61,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
       >
         <HStack
           as={Link}
-          href={session?.user ? "/home" : WEBSITE_URL}
+          href={session?.user ? "/" : WEBSITE_URL}
           rel="home"
           ml="2"
         >
@@ -86,7 +86,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
         <HStack display={["none", "none", "flex"]}>
           <Button
             as={Link}
-            href="/home"
+            href="/"
             variant="ghost"
             colorScheme="gray"
             fontWeight={700}

@@ -33,7 +33,7 @@ export const HydrateProfileData: React.FC<
 
   const queryKey = status == "authenticated" ? "get" : "getPublic";
   const profile = (api.profile[queryKey] as typeof api.profile.get).useQuery(
-    { username: (username || "").substring(1) },
+    { username: username || "" },
     {
       enabled: status !== "loading" && !!username,
     },

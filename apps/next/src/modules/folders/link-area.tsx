@@ -12,7 +12,7 @@ export const LinkArea = () => {
   const slug = router.query.slug as string;
   const folder = useFolder();
 
-  const folderUrl = `/@${folder.user.username}/folders/${slug}`;
+  const folderUrl = `/${folder.user.username}/folders/${slug}`;
 
   return (
     <SimpleGrid

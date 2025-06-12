@@ -32,7 +32,7 @@ export const StudentSettings = () => {
 
   const leave = api.classes.leave.useMutation({
     onSuccess: async () => {
-      await router.push("/home");
+      await router.push("/");
 
       toast({
         title: "Left class successfully",

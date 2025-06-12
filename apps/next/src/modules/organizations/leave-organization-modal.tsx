@@ -36,7 +36,7 @@ export const LeaveOrganizationModal: React.FC<RemoveMemberModalProps> = ({
         render: Toast,
       });
 
-      await router.push("/home");
+      await router.push("/");
     },
   });
 

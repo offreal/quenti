@@ -80,7 +80,7 @@ ProfileArea.Skeleton = function ProfileAreaSkeleton() {
             overflow="hidden"
           >
             <Text lineHeight="none" fontSize="sm" w="max-content">
-              {username ? username.replace("@", "") : "username"}
+              {username || "username"}
             </Text>
           </SkeletonText>
         </Flex>

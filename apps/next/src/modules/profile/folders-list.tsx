@@ -39,7 +39,7 @@ export const FoldersList = () => {
               <ProfileLinkable
                 key={x.id}
                 title={x.title}
-                url={`/@${profile.username}/folders/${x.slug ?? x.id}`}
+                url={`/${profile.username}/folders/${x.slug ?? x.id}`}
                 numValues={x.studySets.length}
                 label="set"
                 leftIcon={<IconFolder size="18" className="min-w-[18px]" />}

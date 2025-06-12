@@ -40,7 +40,7 @@ export const OrganizationLayout: React.FC<React.PropsWithChildren> = ({
   const toast = useToast();
   const isUpgraded = router.query.upgrade === "success";
 
-  useStudentRedirect("/home");
+  useStudentRedirect("/");
 
   const { data: org, error } = useOrganization();
 
@@ -51,7 +51,7 @@ export const OrganizationLayout: React.FC<React.PropsWithChildren> = ({
 
     if (error.data?.httpStatus == 404) {
       void (async () => {
-        await router.push("/home");
+        await router.push("/");
       })();
 
       toast({

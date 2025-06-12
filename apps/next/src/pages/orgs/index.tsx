@@ -57,7 +57,7 @@ export default function Organizations() {
         render: Toast,
       });
 
-      await router.push("/home");
+      await router.push("/");
     },
   });
 

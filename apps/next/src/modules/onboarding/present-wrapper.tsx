@@ -78,7 +78,7 @@ export const PresentWrapper: React.FC<React.PropsWithChildren> = ({
   const currentStep = router.pathname.replace("/onboarding", "");
 
   const getFinalizedCallbackUrl = () => {
-    if (!callbackUrl) return "/home";
+    if (!callbackUrl) return "/";
     return getSafeRedirectUrl(callbackUrl);
   };
 

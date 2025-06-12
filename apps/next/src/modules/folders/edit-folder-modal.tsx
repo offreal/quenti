@@ -30,7 +30,7 @@ export const EditFolderModal: React.FC<EditFolderModalProps> = ({
   const editFolder = api.folders.edit.useMutation({
     onSuccess: async (data) => {
       await router.push(
-        `/@${session.data!.user!.username}/folders/${data.slug ?? data.id}`,
+        `/${session.data!.user!.username}/folders/${data.slug ?? data.id}`,
       );
 
       onClose();

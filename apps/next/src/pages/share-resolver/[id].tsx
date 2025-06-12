@@ -62,7 +62,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     return {
       redirect: {
         permanent: false,
-        destination: `/@${folder.user.username}/folders/${
+        destination: `/${folder.user.username}/folders/${
           folder.slug ?? folder.id
         }`,
       },

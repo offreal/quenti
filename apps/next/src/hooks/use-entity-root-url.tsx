@@ -8,7 +8,7 @@ export const useEntityRootUrl = () => {
 
   return entityType == "set"
     ? `/${id}`
-    : `/${router.query.username as string}/folders/${
-        router.query.slug as string
-      }`;
+          : `/${router.query.username as string}/folders/${
+          router.query.slug as string
+        }`;
 };
