@@ -1,4 +1,4 @@
-import type { Widen } from "@quenti/lib/widen";
+import type { Widen } from "@quizfit/lib/widen";
 
 import { IconCircleCheck, IconLock } from "@tabler/icons-react";
 

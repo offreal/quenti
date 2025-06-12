@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { EnabledFeature } from "@quenti/lib/feature";
+import { Modal } from "@quizfit/components/modal";
+import { EnabledFeature } from "@quizfit/lib/feature";
 
 import { useMediaQuery } from "@chakra-ui/react";
 

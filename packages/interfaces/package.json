@@ -1,11 +1,11 @@
 {
-  "name": "@quenti/interfaces",
+  "name": "@quizfit/interfaces",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "@quenti/prisma": "workspace:*"
+    "@quizfit/prisma": "workspace:*"
   },
   "devDependencies": {
     "@tiptap/react": "^2.1.12"

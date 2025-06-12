@@ -2,10 +2,10 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type Stripe from "stripe";
 import { z } from "zod";
 
-import { getServerAuthSession } from "@quenti/auth";
-import { stripe } from "@quenti/payments";
-import { prisma } from "@quenti/prisma";
-import { upgradeOrganization } from "@quenti/trpc/server/lib/orgs/upgrade";
+import { getServerAuthSession } from "@quizfit/auth";
+import { stripe } from "@quizfit/payments";
+import { prisma } from "@quizfit/prisma";
+import { upgradeOrganization } from "@quizfit/trpc/server/lib/orgs/upgrade";
 
 const querySchema = z.object({
   id: z.string().cuid2(),

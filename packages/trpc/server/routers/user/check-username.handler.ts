@@ -1,6 +1,5 @@
-import { failsPrecondition } from "@quenti/lib/usernames";
+import { failsPrecondition } from "@quizfit/lib/usernames";
 
-import { importConsole } from "../../../console";
 import { usernameProfanity } from "../../common/profanity";
 import type { NonNullableUserContext } from "../../lib/types";
 import type { TCheckUsernameSchema } from "./check-username.schema";
@@ -22,10 +21,7 @@ export const checkUsernameHandler = async ({
   }
 
   try {
-    if (
-      failsPrecondition(input.username) ||
-      (await importConsole("index")).usernameAvailable(input.username) === false
-    ) {
+    if (failsPrecondition(input.username)) {
       return { available: false, isProfane: false };
     }
   } catch {}

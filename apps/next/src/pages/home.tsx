@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 
-import { HeadSeo } from "@quenti/components/head-seo";
-import { api } from "@quenti/trpc";
+import { HeadSeo } from "@quizfit/components/head-seo";
+import { api } from "@quizfit/trpc";
 
 import { Container, Stack } from "@chakra-ui/react";
 

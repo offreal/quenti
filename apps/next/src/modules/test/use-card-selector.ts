@@ -1,4 +1,4 @@
-import type { DefaultData } from "@quenti/interfaces";
+import type { DefaultData } from "@quizfit/interfaces";
 
 import { useTestContext } from "../../stores/use-test-store";
 

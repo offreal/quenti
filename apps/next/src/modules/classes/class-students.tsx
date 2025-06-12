@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useDebounce } from "@quenti/lib/hooks/use-debounce";
-import { api } from "@quenti/trpc";
+import { useDebounce } from "@quizfit/lib/hooks/use-debounce";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,

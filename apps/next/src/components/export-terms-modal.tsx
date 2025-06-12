@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import { Modal } from "@quenti/components/modal";
+import { Modal } from "@quizfit/components/modal";
 
 import {
   Button,

@@ -1,4 +1,4 @@
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import { ConfirmModal } from "../../components/confirm-modal";
 import { useOrganization } from "../../hooks/use-organization";

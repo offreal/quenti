@@ -1,4 +1,4 @@
-import { outfit } from "@quenti/lib/chakra-theme";
+import { outfit } from "@quizfit/lib/chakra-theme";
 
 import {
   Box,

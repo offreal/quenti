@@ -1,11 +1,11 @@
 import { Handlers } from "@highlight-run/node";
 import { withAxiom } from "next-axiom";
 
-import { env as clientEnv } from "@quenti/env/client";
-import { env } from "@quenti/env/server";
-import { createNextApiHandler } from "@quenti/trpc/server/adapters/next";
-import { appRouter } from "@quenti/trpc/server/root";
-import { createTRPCContext } from "@quenti/trpc/server/trpc";
+import { env as clientEnv } from "@quizfit/env/client";
+import { env } from "@quizfit/env/server";
+import { createNextApiHandler } from "@quizfit/trpc/server/adapters/next";
+import { appRouter } from "@quizfit/trpc/server/root";
+import { createTRPCContext } from "@quizfit/trpc/server/trpc";
 
 export default withAxiom(
   createNextApiHandler({
@@ -24,7 +24,7 @@ export default withAxiom(
                 { error, req },
                 {
                   projectID: clientEnv.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID!,
-                  serviceName: "quenti-trpc",
+                  serviceName: "quizfit-trpc",
                   serviceVersion: "1.0.0",
                 },
               );

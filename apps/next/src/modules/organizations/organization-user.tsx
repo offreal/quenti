@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { avatarUrl } from "@quenti/lib/avatar";
-import type { User } from "@quenti/prisma/client";
+import { Link } from "@quizfit/components";
+import { avatarUrl } from "@quizfit/lib/avatar";
+import type { User } from "@quizfit/prisma/client";
 
 import {
   Avatar,

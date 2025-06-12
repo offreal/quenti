@@ -10,10 +10,10 @@ import { fileURLToPath } from "url";
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
  * This is especially useful for Docker builds.
  */
-import "@quenti/env/client/client.mjs";
-import "@quenti/env/server/server.mjs";
+import "@quizfit/env/client/client.mjs";
+import "@quizfit/env/server/server.mjs";
 
-import pjson from "./package.json" assert { type: "json" };
+import pjson from "./package.json" with { type: "json" };
 
 const shouldAnalyzeBundles = process.env.ANALYZE === "true";
 const withBundleAnalyzer = (await import("@next/bundle-analyzer")).default({
@@ -33,7 +33,7 @@ if (process.env.ASSETS_BUCKET_URL)
 
 const getConsoleRewrites = async () => {
   try {
-    return (await import("@quenti/console/next.mjs")).INTERNAL_REWRITES;
+    return (await import("@quizfit/console/next.mjs")).INTERNAL_REWRITES;
   } catch {
     return [];
   }
@@ -44,7 +44,7 @@ let config = {
   generateBuildId: () => nextBuildId({ dir: __dirname }),
   experimental: {
     optimizePackageImports: [
-      "@quenti/components",
+      "@quizfit/components",
       "@tabler/icons-react",
       "@chakra-ui/react",
       "@tremor/react",
@@ -63,23 +63,23 @@ let config = {
     domains,
   },
   transpilePackages: [
-    "@quenti/auth",
-    "@quenti/core",
-    "@quenti/emails",
-    "@quenti/env",
-    "@quenti/interfaces",
-    "@quenti/lib",
-    "@quenti/components",
-    "@quenti/branding",
-    "@quenti/payments",
-    "@quenti/enterprise",
-    "@quenti/prisma",
-    "@quenti/drizzle",
-    "@quenti/trpc",
-    "@quenti/inngest",
-    "@quenti/integrations",
-    "@quenti/types",
-    "@quenti/website",
+    "@quizfit/auth",
+    "@quizfit/core",
+    "@quizfit/emails",
+    "@quizfit/env",
+    "@quizfit/interfaces",
+    "@quizfit/lib",
+    "@quizfit/components",
+    "@quizfit/branding",
+    "@quizfit/payments",
+    "@quizfit/enterprise",
+    "@quizfit/prisma",
+    "@quizfit/drizzle",
+    "@quizfit/trpc",
+    "@quizfit/inngest",
+    "@quizfit/integrations",
+    "@quizfit/types",
+    "@quizfit/website",
   ],
   headers: async () => [
     {

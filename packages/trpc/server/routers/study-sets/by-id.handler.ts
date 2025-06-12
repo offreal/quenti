@@ -1,7 +1,7 @@
-import type { Language } from "@quenti/core";
-import { strip } from "@quenti/lib/strip";
-import type { Widen } from "@quenti/lib/widen";
-import { type StarredTerm, type StudiableTerm } from "@quenti/prisma/client";
+import type { Language } from "@quizfit/core";
+import { strip } from "@quizfit/lib/strip";
+import type { Widen } from "@quizfit/lib/widen";
+import { type StarredTerm, type StudiableTerm } from "@quizfit/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

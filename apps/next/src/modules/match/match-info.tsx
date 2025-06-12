@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { outfit } from "@quenti/lib/chakra-theme";
-import { api } from "@quenti/trpc";
+import { Link } from "@quizfit/components";
+import { outfit } from "@quizfit/lib/chakra-theme";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,

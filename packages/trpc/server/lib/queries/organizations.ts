@@ -1,4 +1,4 @@
-import { prisma } from "@quenti/prisma";
+import { prisma } from "@quizfit/prisma";
 
 export const isOrganizationAdmin = async (userId: string, orgId: string) => {
   return !!(await prisma.organizationMembership.findFirst({

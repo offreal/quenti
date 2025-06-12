@@ -2,10 +2,10 @@ import { useSession } from "next-auth/react";
 import NextLink from "next/link";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { outfit } from "@quenti/lib/chakra-theme";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
-import { EnabledFeature } from "@quenti/lib/feature";
+import { Link } from "@quizfit/components";
+import { outfit } from "@quizfit/lib/chakra-theme";
+import { WEBSITE_URL } from "@quizfit/lib/constants/url";
+import { EnabledFeature } from "@quizfit/lib/feature";
 
 import {
   Button,
@@ -23,7 +23,6 @@ import {
 import {
   IconBooks,
   IconChevronDown,
-  IconCloudDownload,
   IconFolder,
   IconSchool,
   IconSparkles,
@@ -38,13 +37,11 @@ import { UnboundOnly } from "../unbound-only";
 
 export interface LeftNavProps {
   onFolderClick: () => void;
-  onImportClick: () => void;
   onClassClick: () => void;
 }
 
 export const LeftNav: React.FC<LeftNavProps> = ({
   onFolderClick,
-  onImportClick,
   onClassClick,
 }) => {
   const { data: session, status } = useSession()!;
@@ -81,7 +78,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
             fontWeight={700}
             lineHeight={1.33}
           >
-            Quenti
+            Quiz.fit
           </Heading>
         </HStack>
       </Flex>
@@ -151,11 +148,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
               <NextLink href="/create" passHref>
                 <MenuOption icon={<IconBooks size={20} />} label="Study set" />
               </NextLink>
-              <MenuOption
-                icon={<IconCloudDownload size={20} />}
-                label="Import from Quizlet"
-                onClick={onImportClick}
-              />
+
               <MenuDivider />
               <MenuOption
                 icon={<IconFolder size={20} />}

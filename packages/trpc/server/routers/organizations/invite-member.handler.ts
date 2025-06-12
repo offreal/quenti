@@ -1,5 +1,5 @@
-import { inngest } from "@quenti/inngest";
-import { allEqual } from "@quenti/lib/array";
+import { inngest } from "@quizfit/inngest";
+import { allEqual } from "@quizfit/lib/array";
 
 import { TRPCError } from "@trpc/server";
 

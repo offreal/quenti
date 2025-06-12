@@ -35,6 +35,6 @@ install () {
   rm -rf tmp
 }
 
-install "github.com/quenti-io/website" "apps/website"
-install "github.com/quenti-io/integrations" "packages/integrations"
-install "github.com/quenti-io/console" "packages/console"
+install "github.com/offreal/quizfit-website" "apps/website"
+install "github.com/offreal/quizfit-integrations" "packages/integrations"
+install "github.com/offreal/quizfit-console" "packages/console"

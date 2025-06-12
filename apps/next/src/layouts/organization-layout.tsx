@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
+import { Link } from "@quizfit/components";
+import { HeadSeo } from "@quizfit/components/head-seo";
 
 import {
   Box,

@@ -1,10 +1,10 @@
 import React from "react";
 
-import { GenericLabel } from "@quenti/components";
-import { EvaluatedFalse, EvaluatedTrue } from "@quenti/components/test";
-import { RichPromptDisplay } from "@quenti/components/test/rich-prompt-display";
-import { placeholderLanguage } from "@quenti/core";
-import type { WriteData } from "@quenti/interfaces";
+import { GenericLabel } from "@quizfit/components";
+import { EvaluatedFalse, EvaluatedTrue } from "@quizfit/components/test";
+import { RichPromptDisplay } from "@quizfit/components/test/rich-prompt-display";
+import { placeholderLanguage } from "@quizfit/core";
+import type { WriteData } from "@quizfit/interfaces";
 
 import { Box, HStack, Input, Stack, useColorModeValue } from "@chakra-ui/react";
 

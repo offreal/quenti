@@ -1,10 +1,10 @@
 import type { GetServerSidePropsContext } from "next";
 
-import { db, eq } from "@quenti/drizzle";
+import { db, eq } from "@quizfit/drizzle";
 import {
   entityShare as entityShareTable,
   folder as folderTable,
-} from "@quenti/drizzle/schema";
+} from "@quizfit/drizzle/schema";
 
 import { PageWrapper } from "../../common/page-wrapper";
 import { Generic404 } from "../../components/generic-404";

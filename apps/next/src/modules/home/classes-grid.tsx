@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import { Grid, GridItem, Heading, Skeleton, Stack } from "@chakra-ui/react";
 

@@ -1,14 +1,14 @@
 {
-  "name": "@quenti/inngest",
+  "name": "@quizfit/inngest",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@quenti/cortex": "workspace:*",
-    "@quenti/emails": "workspace:*",
-    "@quenti/enterprise": "workspace:*",
-    "@quenti/env": "workspace:*",
-    "@quenti/payments": "workspace:*",
-    "@quenti/prisma": "workspace:*",
+    "@quizfit/cortex": "workspace:*",
+    "@quizfit/emails": "workspace:*",
+    "@quizfit/enterprise": "workspace:*",
+    "@quizfit/env": "workspace:*",
+    "@quizfit/payments": "workspace:*",
+    "@quizfit/prisma": "workspace:*",
     "inngest": "^3.0.2"
   },
   "scripts": {

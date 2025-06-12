@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import { useLoading } from "../hooks/use-loading";
 import { EditorContextLayer } from "./editor/editor-context-layer";
@@ -40,7 +40,7 @@ export const HydrateEditSetData: React.FC<React.PropsWithChildren> = ({
   );
 
   if (loading || !data || data.userId !== session.data?.user?.id)
-    return <EditorLoading mode="edit" />;
+    return <EditorLoading />;
 
   return (
     <EditorContextLayer data={data} mode="edit">

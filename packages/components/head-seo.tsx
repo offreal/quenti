@@ -2,8 +2,8 @@ import merge from "lodash.merge";
 import { NextSeo, type NextSeoProps } from "next-seo";
 import { usePathname } from "next/navigation";
 
-import { BODY_COPY_SEO } from "@quenti/branding";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
+import { BODY_COPY_SEO } from "@quizfit/branding";
+import { WEBSITE_URL } from "@quizfit/lib/constants/url";
 import {
   type EntityImageProps,
   type ProfileImageProps,
@@ -11,9 +11,9 @@ import {
   SEO_IMAGE_OG,
   buildEntityImage,
   buildProfileImage,
-} from "@quenti/lib/seo";
-import { truncateOnWord } from "@quenti/lib/text";
-import { canonicalUrl } from "@quenti/lib/url";
+} from "@quizfit/lib/seo";
+import { truncateOnWord } from "@quizfit/lib/text";
+import { canonicalUrl } from "@quizfit/lib/url";
 
 export interface HeadSeoProps {
   title: string;
@@ -36,15 +36,13 @@ const buildSeo = (props: {
     title,
     canonical,
     openGraph: {
-      siteName: "Quenti",
+      siteName: "Quiz.fit",
       type: "website",
       title,
       description,
       images: [{ url: image }],
     },
-    twitter: {
-      cardType: "summary_large_image",
-    },
+
     additionalMetaTags: [
       {
         property: "name",
@@ -81,7 +79,7 @@ export const HeadSeo: React.FC<HeadSeoProps> = ({
     origin: WEBSITE_URL,
   });
 
-  const title = `${_title}${!hideTitleSuffix ? " | Quenti" : ""}`;
+  const title = `${_title}${!hideTitleSuffix ? " | Quiz.fit" : ""}`;
   const description = truncateOnWord(_description);
 
   let seoObject = buildSeo({

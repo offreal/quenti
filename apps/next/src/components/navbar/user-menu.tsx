@@ -2,7 +2,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
-import { avatarUrl } from "@quenti/lib/avatar";
+import { avatarUrl } from "@quizfit/lib/avatar";
 
 import {
   Avatar,
@@ -112,6 +112,7 @@ export const UserMenu = () => {
           label={colorMode == "dark" ? "Light mode" : "Dark mode"}
           onClick={toggleColorMode}
         />
+
         <MenuOption
           icon={<IconLogout size={18} />}
           label="Sign out"

@@ -1,4 +1,4 @@
-import type { Prisma } from "@quenti/prisma/client";
+import type { Prisma } from "@quizfit/prisma/client";
 
 import type { Distractor } from "./distractors";
 

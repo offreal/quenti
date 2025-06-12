@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { FrameLogo, Link } from "@quenti/components";
+import { FrameLogo, Link } from "@quizfit/components";
 
 import {
   Box,
@@ -13,14 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import {
-  IconBooks,
-  IconCloudDownload,
-  IconFolder,
-  IconPlus,
-} from "@tabler/icons-react";
-
-import { menuEventChannel } from "../../events/menu";
+import { IconBooks, IconFolder, IconPlus } from "@tabler/icons-react";
 
 const ghost = {
   transition: {
@@ -122,18 +115,6 @@ export const EmptyDashboard = () => {
             rounded="xl"
           >
             Create a study set
-          </Button>
-          <Button
-            leftIcon={<IconCloudDownload />}
-            size="lg"
-            shadow="lg"
-            fontSize="md"
-            rounded="xl"
-            onClick={() => {
-              menuEventChannel.emit("openImportDialog");
-            }}
-          >
-            Import from Quizlet
           </Button>
         </Stack>
       </VStack>

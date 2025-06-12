@@ -1,4 +1,4 @@
-import { env } from "@quenti/env/client";
+import { env } from "@quizfit/env/client";
 
 const transform = (url: string, transform: string) => {
   const v = url.includes("?") ? "&" : "?";

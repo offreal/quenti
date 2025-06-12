@@ -1,4 +1,4 @@
-import type { PrismaClient } from "@quenti/prisma/client";
+import type { PrismaClient } from "@quizfit/prisma/client";
 
 export const getRecentStudySets = async (
   prisma: PrismaClient,

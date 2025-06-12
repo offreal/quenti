@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@quizfit/components";
 
 import { Button, Center, Heading, Text, VStack } from "@chakra-ui/react";
 

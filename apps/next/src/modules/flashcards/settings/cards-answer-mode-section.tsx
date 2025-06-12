@@ -1,8 +1,8 @@
 import { Select } from "chakra-react-select";
 import { useSession } from "next-auth/react";
 
-import type { LimitedStudySetAnswerMode } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import type { LimitedStudySetAnswerMode } from "@quizfit/prisma/client";
+import { api } from "@quizfit/trpc";
 
 import { Box, Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 

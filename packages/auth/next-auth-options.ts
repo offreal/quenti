@@ -1,9 +1,9 @@
 import { type NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-import { env } from "@quenti/env/server";
-import { APP_URL } from "@quenti/lib/constants/url";
-import { prisma } from "@quenti/prisma";
+import { env } from "@quizfit/env/server";
+import { APP_URL } from "@quizfit/lib/constants/url";
+import { prisma } from "@quizfit/prisma";
 
 import pjson from "../../apps/next/package.json";
 import { sendVerificationRequest } from "./magic-link";

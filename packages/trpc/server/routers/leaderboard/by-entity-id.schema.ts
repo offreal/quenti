@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { LeaderboardType } from "@quenti/prisma/client";
+import { LeaderboardType } from "@quizfit/prisma/client";
 
 export const ZByEntityIdSchema = z.object({
   mode: z.nativeEnum(LeaderboardType),

@@ -1,4 +1,4 @@
-import { Prisma } from "@quenti/prisma/client";
+import { Prisma } from "@quizfit/prisma/client";
 
 export const collaboratorsSelect =
   Prisma.validator<Prisma.StudySetCollaboratorSelect>()({

@@ -1,5 +1,5 @@
-import { Link } from "@quenti/components/link";
-import type { AssignmentType } from "@quenti/prisma/client";
+import { Link } from "@quizfit/components/link";
+import type { AssignmentType } from "@quizfit/prisma/client";
 
 import {
   Box,

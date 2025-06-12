@@ -1,4 +1,4 @@
-import { NotFoundPage } from "@quenti/components/404";
+import { NotFoundPage } from "@quizfit/components/404";
 
 import { PageWrapper } from "../common/page-wrapper";
 import { getLayout } from "../layouts/main-layout";

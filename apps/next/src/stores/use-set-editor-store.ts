@@ -3,9 +3,9 @@ import React from "react";
 import { createStore, useStore } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 
-import type { Language } from "@quenti/core/language";
-import type { FacingTerm } from "@quenti/interfaces";
-import type { StudySetType, StudySetVisibility } from "@quenti/prisma/client";
+import type { Language } from "@quizfit/core/language";
+import type { FacingTerm } from "@quizfit/interfaces";
+import type { StudySetType, StudySetVisibility } from "@quizfit/prisma/client";
 
 export type ClientTerm = Omit<
   FacingTerm,

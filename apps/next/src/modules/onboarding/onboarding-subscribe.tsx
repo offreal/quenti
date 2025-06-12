@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@quizfit/components";
 
 import {
   Button,
@@ -10,7 +10,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import { IconBrandX } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 import { DefaultLayout } from "./default-layout";
 import { PresentWrapper } from "./present-wrapper";
@@ -43,18 +43,18 @@ export const OnboardingSubscribe = () => {
             }}
           >
             <Stack spacing="0">
-              <Heading fontSize="md">Follow us on X</Heading>
+              <Heading fontSize="md">Follow me on GitHub</Heading>
               <Text fontSize="sm" color={muted}>
-                Features, tips, tricks, etc.
+                Updates, releases, and more.
               </Text>
             </Stack>
             <Button
               as={Link}
-              href="https://twitter.com/quentiapp"
-              leftIcon={<IconBrandX size={18} />}
+              href="https://github.com/offreal"
+              leftIcon={<IconBrandGithub size={18} />}
               w={{ base: "full", md: "auto" }}
             >
-              @quentiapp
+              @offreal
             </Button>
           </Flex>
         </Card>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import {
   Button,
@@ -14,7 +14,6 @@ import {
 
 import {
   IconChevronDown,
-  IconCloudDownload,
   IconKeyboard,
   IconKeyframes,
   IconPlus,
@@ -22,7 +21,6 @@ import {
 } from "@tabler/icons-react";
 
 import { visibilityIcon } from "../../common/visibility-icon";
-import { menuEventChannel } from "../../events/menu";
 import {
   SetEditorStoreContext,
   useSetEditorContext,
@@ -37,7 +35,6 @@ export interface ButtonAreaProps {
 export const ButtonArea = ({ onImportOpen }: ButtonAreaProps) => {
   const store = React.useContext(SetEditorStoreContext)!;
   const id = useSetEditorContext((s) => s.id);
-  const mode = useSetEditorContext((s) => s.mode);
   const visibility = useSetEditorContext((s) => s.visibility);
   const setVisibility = useSetEditorContext((s) => s.setVisibility);
   const classesWithAccess = useSetEditorContext((s) => s.classesWithAccess);
@@ -110,17 +107,6 @@ export const ButtonArea = ({ onImportOpen }: ButtonAreaProps) => {
           >
             Import terms
           </Button>
-          {mode == "create" && (
-            <Button
-              leftIcon={<IconCloudDownload size={18} />}
-              variant="outline"
-              onClick={() => {
-                menuEventChannel.emit("openImportDialog", true);
-              }}
-            >
-              Import from Quizlet
-            </Button>
-          )}
         </HStack>
         <ButtonGroup
           w={{ base: "full", md: "auto" }}
@@ -165,13 +151,9 @@ export const ButtonArea = ({ onImportOpen }: ButtonAreaProps) => {
   );
 };
 
-export interface ButtonAreaSkeletonProps {
-  mode: "create" | "edit";
-}
+export interface ButtonAreaSkeletonProps {}
 
-ButtonArea.Skeleton = function ButtonAreaSkeleton({
-  mode,
-}: ButtonAreaSkeletonProps) {
+ButtonArea.Skeleton = function ButtonAreaSkeleton({}: ButtonAreaSkeletonProps) {
   return (
     <HStack
       justifyContent="space-between"
@@ -200,16 +182,6 @@ ButtonArea.Skeleton = function ButtonAreaSkeleton({
             Import terms
           </Button>
         </Skeleton>
-        {mode == "create" && (
-          <Skeleton fitContent rounded="lg">
-            <Button
-              leftIcon={<IconCloudDownload size={18} />}
-              variant="outline"
-            >
-              Import from Quizlet
-            </Button>
-          </Skeleton>
-        )}{" "}
       </HStack>
       <ButtonGroup
         w={{ base: "full", md: "auto" }}

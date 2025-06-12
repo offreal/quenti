@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@quizfit/components";
 
 import { useColorModeValue } from "@chakra-ui/react";
 

@@ -1,6 +1,6 @@
-import { prisma } from "@quenti/prisma";
-import { Prisma } from "@quenti/prisma/client";
-import type { Exact } from "@quenti/prisma/client/runtime";
+import { prisma } from "@quizfit/prisma";
+import { Prisma } from "@quizfit/prisma/client";
+import type { Exact } from "@quizfit/prisma/client/runtime";
 
 import { TRPCError } from "@trpc/server";
 

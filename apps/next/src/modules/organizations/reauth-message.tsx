@@ -1,8 +1,8 @@
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-import { Link } from "@quenti/components";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
+import { Link } from "@quizfit/components";
+import { WEBSITE_URL } from "@quizfit/lib/constants/url";
 
 import {
   Button,

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-import { GenericLabel } from "@quenti/components";
-import { cleanSpaces } from "@quenti/core/evaluator";
-import { getRandom } from "@quenti/lib/array";
+import { GenericLabel } from "@quizfit/components";
+import { cleanSpaces } from "@quizfit/core/evaluator";
+import { getRandom } from "@quizfit/lib/array";
 
 import { Stack } from "@chakra-ui/react";
 

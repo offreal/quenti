@@ -1,13 +1,13 @@
 {
-  "name": "@quenti/core",
+  "name": "@quizfit/core",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "@quenti/interfaces": "workspace:*",
-    "@quenti/lib": "workspace:*",
-    "@quenti/prisma": "workspace:*"
+    "@quizfit/interfaces": "workspace:*",
+    "@quizfit/lib": "workspace:*",
+    "@quizfit/prisma": "workspace:*"
   },
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx",

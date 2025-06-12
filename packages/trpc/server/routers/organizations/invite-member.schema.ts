@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { MembershipRole } from "@quenti/prisma/client";
+import { MembershipRole } from "@quizfit/prisma/client";
 
 export const ZInviteMemberSchema = z.object({
   orgId: z.string().cuid2(),

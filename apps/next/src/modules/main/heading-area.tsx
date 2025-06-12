@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { api } from "@quenti/trpc";
+import { Link } from "@quizfit/components";
+import { api } from "@quizfit/trpc";
 
 import {
   Button,

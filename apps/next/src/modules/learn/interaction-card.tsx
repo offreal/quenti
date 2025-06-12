@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { Display } from "@quenti/components/display";
+import { Display } from "@quizfit/components/display";
 
 import {
   Box,

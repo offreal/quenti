@@ -4,7 +4,7 @@ import type {
   Highscore,
   Leaderboard as LeaderboardType,
   User,
-} from "@quenti/prisma/client";
+} from "@quizfit/prisma/client";
 
 import { Card, useColorModeValue } from "@chakra-ui/react";
 
