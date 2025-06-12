@@ -32,11 +32,7 @@ if (process.env.ASSETS_BUCKET_URL)
   domains.push(new URL(process.env.ASSETS_BUCKET_URL).host);
 
 const getConsoleRewrites = async () => {
-  try {
-    return (await import("@quizfit/console/next.mjs")).INTERNAL_REWRITES;
-  } catch {
-    return [];
-  }
+  return [];
 };
 
 /** @type {import("next").NextConfig} */
@@ -77,9 +73,7 @@ let config = {
     "@quizfit/drizzle",
     "@quizfit/trpc",
     "@quizfit/inngest",
-    "@quizfit/integrations",
     "@quizfit/types",
-    "@quizfit/website",
   ],
   headers: async () => [
     {

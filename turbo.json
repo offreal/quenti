@@ -24,10 +24,7 @@
     }
   },
   "globalDependencies": [
-    "**/.env",
-    "yarn.lock",
-    "packages/console/**/*",
-    "packages/integrations/**/*"
+    "**/.env"
   ],
   "globalEnv": [
     "NODE_ENV",
