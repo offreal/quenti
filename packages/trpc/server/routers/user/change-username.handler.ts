@@ -1,8 +1,7 @@
-import { failsPrecondition } from "@quenti/lib/usernames";
+import { failsPrecondition } from "@quizfit/lib/usernames";
 
 import { TRPCError } from "@trpc/server";
 
-import { importConsole } from "../../../console";
 import { usernameProfanity } from "../../common/profanity";
 import type { NonNullableUserContext } from "../../lib/types";
 import type { TChangeUsernameSchema } from "./change-username.schema";
@@ -26,10 +25,7 @@ export const changeUsernameHandler = async ({
   }
 
   try {
-    if (
-      failsPrecondition(input.username) ||
-      !(await importConsole("index")).usernameAvailable(input.username)
-    ) {
+    if (failsPrecondition(input.username)) {
       throw new TRPCError({
         code: "BAD_REQUEST",
         message: "Username is not available.",
@@ -42,7 +38,7 @@ export const changeUsernameHandler = async ({
       id: ctx.session.user.id,
     },
     data: {
-      username: input.username,
+      username: input.username.toLowerCase(),
     },
   });
 };

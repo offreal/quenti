@@ -2,10 +2,10 @@ import { useSession } from "next-auth/react";
 import { log } from "next-axiom";
 import React from "react";
 
-import { GenericLabel } from "@quenti/components";
-import type { FacingTerm, Question } from "@quenti/interfaces";
-import { getRandom } from "@quenti/lib/array";
-import { api } from "@quenti/trpc";
+import { GenericLabel } from "@quizfit/components";
+import type { FacingTerm, Question } from "@quizfit/interfaces";
+import { getRandom } from "@quizfit/lib/array";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,

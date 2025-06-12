@@ -2,8 +2,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { api } from "@quenti/trpc";
+import { Modal } from "@quizfit/components/modal";
+import { api } from "@quizfit/trpc";
 
 import { Button, ButtonGroup, Input, Stack } from "@chakra-ui/react";
 
@@ -30,7 +30,7 @@ export const EditFolderModal: React.FC<EditFolderModalProps> = ({
   const editFolder = api.folders.edit.useMutation({
     onSuccess: async (data) => {
       await router.push(
-        `/@${session.data!.user!.username}/folders/${data.slug ?? data.id}`,
+        `/${session.data!.user!.username}/folders/${data.slug ?? data.id}`,
       );
 
       onClose();

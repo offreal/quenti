@@ -1,5 +1,5 @@
-import { env } from "@quenti/env/client";
-import { deleteAvatar } from "@quenti/images/server";
+import { env } from "@quizfit/env/client";
+import { deleteAvatar } from "@quizfit/images/server";
 
 import type { NonNullableUserContext } from "../../lib/types";
 

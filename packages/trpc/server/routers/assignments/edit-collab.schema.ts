@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { StudySetCollabType } from "@quenti/prisma/client";
+import { StudySetCollabType } from "@quizfit/prisma/client";
 
 export const ZEditCollabSchema = z.object({
   id: z.string().cuid(),

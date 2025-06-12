@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import type { CreateEmailOptions } from "resend/build/src/emails/interfaces";
 
-import { env } from "@quenti/env/server";
+import { env } from "@quizfit/env/server";
 
 import ClasssInviteEmail, {
   type ClassInviteEmailProps,
@@ -19,11 +19,10 @@ import OrganizationInviteEmail, {
   type OrganizationInviteEmailProps,
 } from "./templates/organization-invite";
 import OrganizationTeacherInviteEmail from "./templates/organization-teacher-invite";
-import ProfileImportCompleteEmail, {
-  type ProfileImportCompleteEmailProps,
-} from "./templates/profile-import-complete";
 
-const NOTIFICATIONS_SENDER = `Quenti <notifications@${env.EMAIL_SENDER || ""}>`;
+const NOTIFICATIONS_SENDER = `Quiz.fit <notifications@${
+  env.EMAIL_SENDER || ""
+}>`;
 
 const to = (email: string | string[]) => {
   if (env.USE_RESEND_PREVIEWS) return "delivered@resend.dev";
@@ -49,7 +48,7 @@ export const sendMagicLinkEmail = async (
   await sendEmail({
     from: NOTIFICATIONS_SENDER,
     to: email,
-    subject: `Sign in to Quenti`,
+    subject: `Sign in to Quiz.fit`,
     react: MagicLinkEmail(opts),
   });
 };
@@ -63,7 +62,7 @@ export const sendClassInviteEmail = async (
     to: email,
     subject: `${opts.inviter.name ?? opts.inviter.email} invited you to teach ${
       opts.className
-    } on Quenti`,
+    } on Quiz.fit`,
     react: ClasssInviteEmail(opts),
   });
 };
@@ -77,7 +76,7 @@ export const sendOrganizationInviteEmail = async (
     to: email,
     subject: `${opts.inviter.name ?? opts.inviter.email} invited you to join ${
       opts.orgName
-    } on Quenti`,
+    } on Quiz.fit`,
     react: OrganizationInviteEmail(opts),
   });
 };
@@ -91,7 +90,7 @@ export const sendOrganizationTeacherInviteEmail = async (
     to: email,
     subject: `${opts.inviter.name ?? opts.inviter.email} invited you to join ${
       opts.orgName
-    } on Quenti`,
+    } on Quiz.fit`,
     react: OrganizationTeacherInviteEmail(opts),
   });
 };
@@ -117,17 +116,5 @@ export const sendConfirmCodeEmail = async (
     to: email,
     subject: `Verify ${opts.orgName}`,
     react: ConfirmCodeEmail(opts),
-  });
-};
-
-export const sendProfileImportCompleteEmail = async (
-  email: string,
-  opts: ProfileImportCompleteEmailProps,
-) => {
-  await sendEmail({
-    from: NOTIFICATIONS_SENDER,
-    to: email,
-    subject: `Your Quenti profile is ready!`,
-    react: ProfileImportCompleteEmail(opts),
   });
 };

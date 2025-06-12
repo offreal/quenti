@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { StudiableMode } from "@quenti/prisma/client";
+import { StudiableMode } from "@quizfit/prisma/client";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 

@@ -1,9 +1,9 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { Modal } from "@quenti/components/modal";
-import { api } from "@quenti/trpc";
+import { Link } from "@quizfit/components";
+import { Modal } from "@quizfit/components/modal";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -166,7 +166,7 @@ const FolderCard: React.FC<FolderCardProps> = ({
             <IconFolder size={18} />
           </Box>
           <Link
-            href={`/@${user.username}/folders/${slug ?? folderId}`}
+            href={`/${user.username}/folders/${slug ?? folderId}`}
             transition="color 0.2s ease-in-out"
             _hover={{
               color: "blue.200",

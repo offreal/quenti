@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -46,7 +46,7 @@ export const OrganizationInviteScreen = () => {
           render: Toast,
         });
       } else {
-        await router.push(`/home`);
+        await router.push(`/`);
       }
 
       await utils.user.me.invalidate();

@@ -1,5 +1,5 @@
-import { getObjectAssetUrl } from "@quenti/images/server";
-import { thumbhashFromCdn } from "@quenti/images/server";
+import { getObjectAssetUrl } from "@quizfit/images/server";
+import { thumbhashFromCdn } from "@quizfit/images/server";
 
 import { isClassTeacherOrThrow } from "../../lib/queries/classes";
 import type { NonNullableUserContext } from "../../lib/types";

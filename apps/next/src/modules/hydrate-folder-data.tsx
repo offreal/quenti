@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { type RouterOutputs, api } from "@quenti/trpc";
+import { type RouterOutputs, api } from "@quizfit/trpc";
 
 import { Loading } from "../components/loading";
 import { queryEventChannel } from "../events/query";
@@ -100,7 +100,7 @@ export const HydrateFolderData: React.FC<
   return (
     <ContextLayer data={folder.data}>
       <Head>
-        <title>{folder.data.title} | Quenti</title>
+        <title>{folder.data.title} | Quiz.fit</title>
       </Head>
       {children}
     </ContextLayer>

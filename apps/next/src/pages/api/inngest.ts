@@ -1,4 +1,4 @@
-import { functions, inngest } from "@quenti/inngest";
-import { serve } from "@quenti/inngest/next";
+import { functions, inngest } from "@quizfit/inngest";
+import { serve } from "@quizfit/inngest/next";
 
 export default serve({ client: inngest, functions });

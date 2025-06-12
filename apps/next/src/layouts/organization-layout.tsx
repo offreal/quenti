@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
+import { Link } from "@quizfit/components";
+import { HeadSeo } from "@quizfit/components/head-seo";
 
 import {
   Box,
@@ -40,7 +40,7 @@ export const OrganizationLayout: React.FC<React.PropsWithChildren> = ({
   const toast = useToast();
   const isUpgraded = router.query.upgrade === "success";
 
-  useStudentRedirect("/home");
+  useStudentRedirect("/");
 
   const { data: org, error } = useOrganization();
 
@@ -51,7 +51,7 @@ export const OrganizationLayout: React.FC<React.PropsWithChildren> = ({
 
     if (error.data?.httpStatus == 404) {
       void (async () => {
-        await router.push("/home");
+        await router.push("/");
       })();
 
       toast({

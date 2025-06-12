@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import { avatarUrl } from "@quenti/lib/avatar";
+import { avatarUrl } from "@quizfit/lib/avatar";
 
 import {
   Avatar,
@@ -80,7 +80,7 @@ ProfileArea.Skeleton = function ProfileAreaSkeleton() {
             overflow="hidden"
           >
             <Text lineHeight="none" fontSize="sm" w="max-content">
-              {username ? username.replace("@", "") : "username"}
+              {username || "username"}
             </Text>
           </SkeletonText>
         </Flex>

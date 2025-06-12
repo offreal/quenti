@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 
-import type { RouterOutputs } from "@quenti/trpc";
+import type { RouterOutputs } from "@quizfit/trpc";
 
 import {
   HStack,

@@ -3,9 +3,9 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { avatarUrl } from "@quenti/lib/avatar";
-import { EnabledFeature } from "@quenti/lib/feature";
+import { Link } from "@quizfit/components";
+import { avatarUrl } from "@quizfit/lib/avatar";
+import { EnabledFeature } from "@quizfit/lib/feature";
 
 import {
   Avatar,
@@ -27,10 +27,6 @@ import LeftNav from "./navbar/left-nav";
 import MobileMenu from "./navbar/mobile-menu";
 import UserMenu from "./navbar/user-menu";
 
-const ImportFromQuizletModal = dynamic(
-  () => import("./import-from-quizlet-modal"),
-  { ssr: false },
-);
 const CreateFolderModal = dynamic(() => import("./create-folder-modal"), {
   ssr: false,
 });
@@ -46,28 +42,20 @@ export const Navbar: React.FC = () => {
 
   const [folderModalOpen, setFolderModalOpen] = React.useState(false);
   const [folderChildSetId, setFolderChildSetId] = React.useState<string>();
-  const [importIsEdit, setImportIsEdit] = React.useState(false);
-  const [importModalOpen, setImportModalOpen] = React.useState(false);
 
   React.useEffect(() => {
     const createFolder = (setId?: string) => {
       setFolderChildSetId(setId);
       setFolderModalOpen(true);
     };
-    const openImportDialog = (edit = false) => {
-      setImportIsEdit(edit);
-      setImportModalOpen(true);
-    };
     const createClass = () => {
       onClassClick();
     };
 
     menuEventChannel.on("createFolder", createFolder);
-    menuEventChannel.on("openImportDialog", openImportDialog);
     menuEventChannel.on("createClass", createClass);
     return () => {
       menuEventChannel.off("createFolder", createFolder);
-      menuEventChannel.off("openImportDialog", openImportDialog);
       menuEventChannel.off("createClass", createClass);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -89,13 +77,6 @@ export const Navbar: React.FC = () => {
         }}
         childSetId={folderChildSetId}
       />
-      <ImportFromQuizletModal
-        isOpen={importModalOpen}
-        onClose={() => {
-          setImportModalOpen(false);
-        }}
-        edit={importIsEdit}
-      />
       <Flex pos="relative" zIndex={1000} w="full" h="20">
         <HStack
           as="header"
@@ -108,10 +89,6 @@ export const Navbar: React.FC = () => {
         >
           <LeftNav
             onFolderClick={() => setFolderModalOpen(true)}
-            onImportClick={() => {
-              setImportIsEdit(false);
-              setImportModalOpen(true);
-            }}
             onClassClick={onClassClick}
           />
           <Box display={["block", "block", "none"]}>
@@ -147,10 +124,6 @@ export const Navbar: React.FC = () => {
               onClose={onMobileMenuToggle}
               onFolderClick={() => setFolderModalOpen(true)}
               onClassClick={onClassClick}
-              onImportClick={() => {
-                setImportIsEdit(false);
-                setImportModalOpen(true);
-              }}
             />
           </Box>
           <HStack as="nav" display={["none", "none", "flex"]} height="12">

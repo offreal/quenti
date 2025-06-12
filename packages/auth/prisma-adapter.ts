@@ -1,10 +1,10 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import type { Adapter } from "next-auth/adapters";
 
-import { env as clientEnv } from "@quenti/env/client";
-import { env } from "@quenti/env/server";
-import { USERNAME_REPLACE_REGEXP } from "@quenti/lib/constants/characters";
-import type { PrismaClient, UserType } from "@quenti/prisma/client";
+import { env as clientEnv } from "@quizfit/env/client";
+import { env } from "@quizfit/env/server";
+import { USERNAME_REPLACE_REGEXP } from "@quizfit/lib/constants/characters";
+import type { PrismaClient, UserType } from "@quizfit/prisma/client";
 
 export function CustomPrismaAdapter(p: PrismaClient): Adapter {
   return {
@@ -14,7 +14,9 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
 
       let uniqueUsername = null;
       if (name) {
-        const sanitized = name.replace(USERNAME_REPLACE_REGEXP, "");
+        const sanitized = name
+          .replace(USERNAME_REPLACE_REGEXP, "")
+          .toLowerCase();
         uniqueUsername = sanitized;
 
         const existing = (
@@ -22,17 +24,15 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
             where: {
               username: {
                 not: null,
-                startsWith: sanitized,
+                startsWith: sanitized.toLowerCase(),
               },
             },
           })
-        ).map((user) => user.username?.toLowerCase());
+        ).map((user) => user.username);
 
         if (existing.length) {
           let suffix = "1";
-          while (
-            existing.some((u) => u === (sanitized + suffix).toLowerCase())
-          ) {
+          while (existing.some((u) => u === sanitized + suffix)) {
             suffix = (Number(suffix) + 1).toString();
           }
           uniqueUsername = sanitized + suffix;
@@ -82,7 +82,7 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
       const user = await p.user.create({
         data: {
           ...data,
-          username: uniqueUsername,
+          username: uniqueUsername?.toLowerCase(),
           organizationId: associatedDomain?.orgId,
           displayName: !!data.name,
           isOrgEligible,

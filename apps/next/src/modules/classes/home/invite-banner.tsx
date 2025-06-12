@@ -1,7 +1,7 @@
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import { api } from "@quenti/trpc";
+import { env } from "@quizfit/env/client";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -162,7 +162,7 @@ export const InviteBanner = () => {
                   {initialSection && (
                     <Skeleton rounded="md" isLoaded={!!code}>
                       <InputGroup>
-                        <Input size="sm" value={`quenti.io/j${code}`} />
+                        <Input size="sm" value={`quiz.fit/j${code}`} />
                         <InputRightElement boxSize="32px">
                           <TooltipWithTouch
                             label={copied ? "Copied!" : "Copy link"}

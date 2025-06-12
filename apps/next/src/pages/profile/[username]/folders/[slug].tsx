@@ -1,9 +1,9 @@
 import type { GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 
-import { HeadSeo } from "@quenti/components/head-seo";
-import { and, db, eq, or, sql } from "@quenti/drizzle";
-import { folder, studySetsOnFolders, user } from "@quenti/drizzle/schema";
+import { HeadSeo } from "@quizfit/components/head-seo";
+import { and, db, eq, or, sql } from "@quizfit/drizzle";
+import { folder, studySetsOnFolders, user } from "@quizfit/drizzle/schema";
 
 import { LazyWrapper } from "../../../../common/lazy-wrapper";
 import { PageWrapper } from "../../../../common/page-wrapper";
@@ -54,11 +54,11 @@ FolderPage.getLayout = getLayout;
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   if (!db) return { props: { set: null } };
 
-  const username = (ctx.query?.username as string).substring(1);
+  const username = ctx.query?.username as string;
   const idOrSlug = ctx.query?.slug as string;
 
   const target = await db.query.user.findFirst({
-    where: eq(user.username, username),
+    where: eq(user.username, username.toLowerCase()),
   });
 
   if (!target) return { props: { folder: null } };

@@ -1,4 +1,4 @@
-import { prisma } from "@quenti/prisma";
+import { prisma } from "@quizfit/prisma";
 
 export const getOrgDomains = async (orgId: string) => {
   return await prisma.organizationDomain.findMany({

@@ -7,7 +7,7 @@ import {
   Tailwind,
 } from "@react-email/components";
 
-import { BODY_COPY_BASE } from "@quenti/branding";
+import { BODY_COPY_BASE } from "@quizfit/branding";
 
 import { BodyContainer } from "../components/body-container";
 import { Content } from "../components/content";
@@ -31,7 +31,7 @@ export const OrganizationTeacherInviteEmail = ({
         <Head />
         <Preview>
           {inviter.name ?? inviter.email} has invited you to join {orgName} on
-          Quenti
+          Quiz.fit
         </Preview>
         <BodyContainer>
           <MainContainer>
@@ -47,12 +47,12 @@ export const OrganizationTeacherInviteEmail = ({
                 {inviter.name ?? inviter.email}
               </strong>{" "}
               has invited you to join{" "}
-              <strong className="text-black">{orgName}</strong> on Quenti
+              <strong className="text-black">{orgName}</strong> on Quiz.fit
             </Heading>
             <Content>
               {BODY_COPY_BASE}{" "}
               <a
-                href="https://quenti.io/organizations"
+                href="https://quiz.fit/organizations"
                 className="text-blue-500"
               >
                 Learn more

@@ -1,8 +1,8 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { useDebounce } from "@quenti/lib/hooks/use-debounce";
-import { api } from "@quenti/trpc";
+import { useDebounce } from "@quizfit/lib/hooks/use-debounce";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -67,10 +67,14 @@ export const ChangeUsernameInput: React.FC<ChangeUsernameInputProps> = ({
 
   const isProfane = checkUsername.data?.isProfane;
   const isTooLong = usernameValue.length > 40;
+  const isTooShort = usernameValue.length > 0 && usernameValue.length < 3;
   const isTaken = checkUsername.data?.available === false;
   const isInvalid =
     !!usernameValue.length &&
-    (!USERNAME_REGEXP.test(usernameValue) || isProfane || isTooLong);
+    (!USERNAME_REGEXP.test(usernameValue) ||
+      isProfane ||
+      isTooLong ||
+      isTooShort);
 
   const isDisabled =
     isInvalid ||
@@ -178,13 +182,15 @@ export const ChangeUsernameInput: React.FC<ChangeUsernameInputProps> = ({
         color={gray}
         visibility={isInvalid || isTaken ? "visible" : "hidden"}
       >
-        {isTooLong
-          ? "Username must be 40 characters or less."
-          : isProfane
-            ? "Profane usernames are not allowed."
-            : isTaken
-              ? "That username has already been taken."
-              : "Only letters, numbers, underscores and dashes allowed."}
+        {isTooShort
+          ? "Username must be at least 3 characters long."
+          : isTooLong
+            ? "Username must be 40 characters or less."
+            : isProfane
+              ? "Profane usernames are not allowed."
+              : isTaken
+                ? "That username has already been taken."
+                : "Only letters, numbers, underscores and dashes allowed."}
       </Text>
     </Stack>
   );

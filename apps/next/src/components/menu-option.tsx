@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import React from "react";
 
-import { Link } from "@quenti/components";
+import { Link } from "@quizfit/components";
 
 import {
   MenuItem,
@@ -21,13 +21,14 @@ export interface MenuOptionProps {
 }
 
 export const MenuOption = forwardRef<MenuItemProps & MenuOptionProps, "div">(
-  ({ icon, label, href, onClick, ...props }) => {
+  ({ icon, label, href, onClick, ...props }, ref) => {
     const hover = useColorModeValue("gray.100", "gray.700");
     const bg = useColorModeValue("white", "gray.800");
     const color = useColorModeValue("black", "white");
 
     return (
       <MenuItem
+        ref={ref}
         icon={icon}
         as={href ? Link : undefined}
         href={href}

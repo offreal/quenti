@@ -1,4 +1,4 @@
-import type { Term } from "@quenti/prisma/client";
+import type { Term } from "@quizfit/prisma/client";
 
 import { generateEmbeddings } from "../lib/embeddings";
 import { VectorStore } from "../lib/vector-store";

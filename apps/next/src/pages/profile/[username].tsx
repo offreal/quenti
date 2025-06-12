@@ -1,9 +1,9 @@
 import type { GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 
-import { HeadSeo } from "@quenti/components/head-seo";
-import { db, eq } from "@quenti/drizzle";
-import { user as userTable } from "@quenti/drizzle/schema";
+import { HeadSeo } from "@quizfit/components/head-seo";
+import { db, eq } from "@quizfit/drizzle";
+import { user as userTable } from "@quizfit/drizzle/schema";
 
 import { LazyWrapper } from "../../common/lazy-wrapper";
 import { PageWrapper } from "../../common/page-wrapper";
@@ -30,11 +30,10 @@ const UserPage = ({ user }: inferSSRProps<typeof getServerSideProps>) => {
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   if (!db) return { props: { user: null } };
 
-  const _username = ctx.query?.username as string;
-  const username = _username.substring(1);
+  const username = ctx.query?.username as string;
 
   const user = await db?.query.user.findFirst({
-    where: eq(userTable.username, username),
+    where: eq(userTable.username, username.toLowerCase()),
     columns: {
       id: true,
       username: true,

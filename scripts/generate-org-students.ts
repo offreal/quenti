@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 import { PrismaClient } from "@prisma/client";
 
-import { USERNAME_REGEXP } from "@quenti/lib/constants/characters";
+import { USERNAME_REGEXP } from "@quizfit/lib/constants/characters";
 
 const NUM_STUDENTS = 10000;
 const prisma = new PrismaClient();
@@ -33,7 +33,7 @@ const main = async () => {
 
     users.push({
       name,
-      username,
+      username: username.toLowerCase(),
       email: email.replace("@", `+${i}@`),
       image,
     });

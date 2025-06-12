@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@quizfit/components";
 
 import { Button, Center, Heading, Text, VStack } from "@chakra-ui/react";
 
@@ -16,7 +16,7 @@ export const Profile404 = () => {
           <Text>
             They might have changed their username, or deleted their account.
           </Text>
-          <Button as={Link} href="/home" variant="ghost">
+          <Button as={Link} href="/" variant="ghost">
             Home
           </Button>
         </VStack>

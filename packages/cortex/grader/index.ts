@@ -1,5 +1,5 @@
-import type { CortexGraderResponse } from "@quenti/interfaces";
-import { chunkArray } from "@quenti/lib/array";
+import type { CortexGraderResponse } from "@quizfit/interfaces";
+import { chunkArray } from "@quizfit/lib/array";
 
 import { generateEmbeddings } from "../lib/embeddings";
 import { similarity } from "../lib/similarity";

@@ -2,8 +2,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import { api } from "@quenti/trpc";
+import { env } from "@quizfit/env/client";
+import { api } from "@quizfit/trpc";
 
 import {
   Avatar,

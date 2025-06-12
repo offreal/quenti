@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { useSession } from "next-auth/react";
 
-import { FrameLogo, Link } from "@quenti/components";
+import { FrameLogo, Link } from "@quizfit/components";
 
 import {
   Box,
@@ -13,14 +14,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import {
-  IconBooks,
-  IconCloudDownload,
-  IconFolder,
-  IconPlus,
-} from "@tabler/icons-react";
-
-import { menuEventChannel } from "../../events/menu";
+import { IconBooks, IconFolder, IconPlus } from "@tabler/icons-react";
 
 const ghost = {
   transition: {
@@ -58,6 +52,16 @@ const folder = {
 };
 
 export const EmptyDashboard = () => {
+  const { data: session } = useSession();
+
+  const handleCreateClick = () => {
+    if (!session?.user) {
+      // Redirect to login with callback to create page
+      window.location.href =
+        "/auth/login?callbackUrl=" + encodeURIComponent("/create");
+    }
+  };
+
   return (
     <Center
       w="full"
@@ -116,24 +120,13 @@ export const EmptyDashboard = () => {
             leftIcon={<IconPlus />}
             size="lg"
             shadow="lg"
-            as={Link}
-            href="/create"
+            as={session?.user ? Link : undefined}
+            href={session?.user ? "/create" : undefined}
+            onClick={!session?.user ? handleCreateClick : undefined}
             fontSize="md"
             rounded="xl"
           >
             Create a study set
-          </Button>
-          <Button
-            leftIcon={<IconCloudDownload />}
-            size="lg"
-            shadow="lg"
-            fontSize="md"
-            rounded="xl"
-            onClick={() => {
-              menuEventChannel.emit("openImportDialog");
-            }}
-          >
-            Import from Quizlet
           </Button>
         </Stack>
       </VStack>

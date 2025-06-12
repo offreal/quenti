@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "@quenti/next#build": {
+    "@quizfit/next#build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": ["DATABASE_URL"]
@@ -23,12 +23,7 @@
       "cache": false
     }
   },
-  "globalDependencies": [
-    "**/.env",
-    "yarn.lock",
-    "packages/console/**/*",
-    "packages/integrations/**/*"
-  ],
+  "globalDependencies": ["**/.env"],
   "globalEnv": [
     "NODE_ENV",
     "PORT",

@@ -1,7 +1,7 @@
 import client from "prom-client";
 
-import { env } from "@quenti/env/server";
-import { prisma } from "@quenti/prisma";
+import { env } from "@quizfit/env/server";
+import { prisma } from "@quizfit/prisma";
 
 import pjson from "../../../apps/next/package.json";
 
@@ -96,10 +96,7 @@ export const register =
       name: "authed_api_requests_total",
       help: "The number of requests to the API that were authenticated",
     });
-    new client.Counter({
-      name: "fetch_import_requests_total",
-      help: "The number of requests to import directly from Quizlet.com",
-    });
+
     new client.Counter({
       name: "studiable_requests_total",
       help: 'The number of term "put" requests made to the studiable router',
@@ -107,7 +104,7 @@ export const register =
 
     new client.Gauge({
       name: "version_info",
-      help: "Quizlet version info.",
+      help: "Quiz.fit version info.",
       labelNames: ["version", "major", "minor", "patch"],
       aggregator: "first",
       collect() {

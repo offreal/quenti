@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { UserType } from "@quenti/prisma/client";
+import { UserType } from "@quizfit/prisma/client";
 
 export const ZSetUserTypeSchema = z.object({
   type: z.nativeEnum(UserType),

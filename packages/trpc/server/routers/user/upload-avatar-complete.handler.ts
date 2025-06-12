@@ -1,4 +1,4 @@
-import { getUserAvatarUrl } from "@quenti/images/server";
+import { getUserAvatarUrl } from "@quizfit/images/server";
 
 import type { NonNullableUserContext } from "../../lib/types";
 

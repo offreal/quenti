@@ -1,9 +1,9 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { env } from "@quenti/env/client";
-import { api } from "@quenti/trpc";
+import { Link } from "@quizfit/components";
+import { env } from "@quizfit/env/client";
+import { api } from "@quizfit/trpc";
 
 import {
   Avatar,
@@ -55,7 +55,7 @@ export const ProfileInfo = () => {
           variant="outline"
           leftIcon={<IconUser size={18} />}
           as={Link}
-          href={`/@${session!.user!.username}`}
+          href={`/${session!.user!.username}`}
           w="max"
         >
           View your profile

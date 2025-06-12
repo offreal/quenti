@@ -1,4 +1,4 @@
-import type { StudySetAnswerMode } from "@quenti/prisma/client";
+import type { StudySetAnswerMode } from "@quizfit/prisma/client";
 
 import json from "./languages.json";
 

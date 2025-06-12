@@ -1,9 +1,9 @@
 {
-  "name": "@quenti/types",
+  "name": "@quizfit/types",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@quenti/prisma": "workspace:*",
+    "@quizfit/prisma": "workspace:*",
     "next": "^14.0.4",
     "next-auth": "^4.24.5",
     "next-axiom": "^0.18.0"

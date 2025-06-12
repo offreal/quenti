@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -96,7 +96,7 @@ export const ClassSettings = () => {
   });
   const deleteClass = api.classes.delete.useMutation({
     onSuccess: async () => {
-      await router.push("/home");
+      await router.push("/");
       toast({
         title: "Class deleted",
         icon: <AnimatedCheckCircle />,
@@ -106,7 +106,7 @@ export const ClassSettings = () => {
   });
   const removeMembers = api.classes.removeMembers.useMutation({
     onSuccess: async () => {
-      await router.push("/home");
+      await router.push("/");
       toast({
         title: "Left class successfully",
         icon: <AnimatedCheckCircle />,

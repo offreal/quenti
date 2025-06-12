@@ -7,12 +7,12 @@ import type {
   RoundSummary,
   StudiableTermWithDistractors,
   TermWithDistractors,
-} from "@quenti/interfaces";
-import { shuffleArray } from "@quenti/lib/array";
-import { SPECIAL_CHAR_REGEXP } from "@quenti/lib/constants/characters";
-import { LEARN_TERMS_IN_ROUND } from "@quenti/lib/constants/learn";
-import { CORRECT, INCORRECT } from "@quenti/lib/constants/remarks";
-import type { LearnMode, StudySetAnswerMode } from "@quenti/prisma/client";
+} from "@quizfit/interfaces";
+import { shuffleArray } from "@quizfit/lib/array";
+import { SPECIAL_CHAR_REGEXP } from "@quizfit/lib/constants/characters";
+import { LEARN_TERMS_IN_ROUND } from "@quizfit/lib/constants/learn";
+import { CORRECT, INCORRECT } from "@quizfit/lib/constants/remarks";
+import type { LearnMode, StudySetAnswerMode } from "@quizfit/prisma/client";
 
 import { word } from "../utils/terms";
 

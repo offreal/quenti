@@ -1,4 +1,4 @@
-import { EnabledFeature } from "@quenti/lib/feature";
+import { EnabledFeature } from "@quizfit/lib/feature";
 
 import { loadHandler } from "../../lib/load-handler";
 import {

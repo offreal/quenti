@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -66,7 +66,7 @@ export const TopBar = () => {
 
   const deleteSet = api.studySets.delete.useMutation({
     onSuccess: async () => {
-      if (mode == "edit") await router.push("/home");
+      if (mode == "edit") await router.push("/");
       else {
         editorEventChannel.emit("refresh");
       }

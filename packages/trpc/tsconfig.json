@@ -8,8 +8,6 @@
   },
   "include": [
     "index.ts",
-    "integrations.ts",
-    "console.ts",
     "client",
     "next",
     "react",

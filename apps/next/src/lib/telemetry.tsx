@@ -4,8 +4,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import type { StudySetVisibility } from "@quenti/prisma/client";
+import { env } from "@quizfit/env/client";
+import type { StudySetVisibility } from "@quizfit/prisma/client";
 
 type SetCreated = {
   id: string;
@@ -33,7 +33,7 @@ type ImportCompleted = {
   title: string;
   terms: number;
   origin: string;
-  source: "quizlet";
+  source: "file";
   elapsed: number;
 };
 

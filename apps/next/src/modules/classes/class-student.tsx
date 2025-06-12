@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Link } from "@quenti/components";
-import type { User } from "@quenti/prisma/client";
+import { Link } from "@quizfit/components";
+import type { User } from "@quizfit/prisma/client";
 
 import {
   Avatar,
@@ -262,7 +262,7 @@ const Options: React.FC<
               <LinkOverlay
                 w="full"
                 h="full"
-                href={`/@${user?.username || ""}`}
+                href={`/${user?.username || ""}`}
                 as={Link}
                 display="flex"
                 alignItems="center"

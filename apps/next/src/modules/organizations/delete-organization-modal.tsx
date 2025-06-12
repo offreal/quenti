@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { api } from "@quenti/trpc";
+import { Modal } from "@quizfit/components/modal";
+import { api } from "@quizfit/trpc";
 
 import {
   Button,
@@ -35,7 +35,7 @@ export const DeleteOrganizationModal: React.FC<
     onSuccess: async ({ scheduled }) => {
       if (!scheduled) {
         await utils.user.me.invalidate();
-        await router.push("/home");
+        await router.push("/");
       } else {
         await utils.organizations.get.invalidate();
 

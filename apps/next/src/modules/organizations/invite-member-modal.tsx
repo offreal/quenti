@@ -3,10 +3,10 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Modal } from "@quenti/components/modal";
-import { env } from "@quenti/env/client";
-import type { MembershipRole } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { Modal } from "@quizfit/components/modal";
+import { env } from "@quizfit/env/client";
+import type { MembershipRole } from "@quizfit/prisma/client";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,

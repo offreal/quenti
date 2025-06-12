@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-import { env } from "@quenti/env/server";
+import { env } from "@quizfit/env/server";
 
 declare global {
   // eslint-disable-next-line no-var

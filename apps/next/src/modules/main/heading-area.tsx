@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { api } from "@quenti/trpc";
+import { Link } from "@quizfit/components";
+import { api } from "@quizfit/trpc";
 
 import {
   Button,
@@ -46,7 +46,7 @@ export const HeadingArea = () => {
 
   const deleteSet = api.studySets.delete.useMutation({
     onSuccess: async () => {
-      await router.push("/home");
+      await router.push("/");
     },
   });
   const [deleteModalOpen, setDeleteModalOpen] = React.useState(false);

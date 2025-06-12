@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { ToggleGroup } from "@quenti/components/toggle-group";
-import type { StudySetVisibility } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { Modal } from "@quizfit/components/modal";
+import { ToggleGroup } from "@quizfit/components/toggle-group";
+import type { StudySetVisibility } from "@quizfit/prisma/client";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,

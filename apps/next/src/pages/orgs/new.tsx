@@ -5,8 +5,8 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
-import { api } from "@quenti/trpc";
+import { WEBSITE_URL } from "@quizfit/lib/constants/url";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -128,7 +128,7 @@ export default function NewOrganization() {
       />
     );
   if (session?.user?.isOrgEligible === false)
-    return <ReauthMessage title="Manage your school with Quenti" />;
+    return <ReauthMessage title="Manage your school with Quiz.fit" />;
 
   return (
     <WizardLayout

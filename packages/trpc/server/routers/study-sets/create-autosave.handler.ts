@@ -1,4 +1,4 @@
-import type { Language } from "@quenti/core";
+import type { Language } from "@quizfit/core";
 
 import type { NonNullableUserContext } from "../../lib/types";
 import { studySetSelect, termsSelect } from "./queries";

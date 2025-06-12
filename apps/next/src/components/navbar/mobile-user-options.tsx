@@ -1,7 +1,7 @@
 import { signOut, useSession } from "next-auth/react";
 
-import { Link } from "@quenti/components";
-import { avatarUrl } from "@quenti/lib/avatar";
+import { Link } from "@quizfit/components";
+import { avatarUrl } from "@quizfit/lib/avatar";
 
 import {
   Avatar,
@@ -85,7 +85,7 @@ export const MobileUserOptions: React.FC<MobileUserOptionsProps> = ({
         <Button
           variant="outline"
           as={Link}
-          href={`/@${user.username}`}
+          href={`/${user.username}`}
           leftIcon={<IconUserCircle size={18} />}
         >
           Profile

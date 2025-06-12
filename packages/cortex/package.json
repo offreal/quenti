@@ -1,5 +1,5 @@
 {
-  "name": "@quenti/cortex",
+  "name": "@quizfit/cortex",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "@huggingface/inference": "^2.6.1",
-    "@quenti/env": "workspace:*",
-    "@quenti/interfaces": "workspace:*",
-    "@quenti/lib": "workspace:*",
-    "@quenti/prisma": "workspace:*",
+    "@quizfit/env": "workspace:*",
+    "@quizfit/interfaces": "workspace:*",
+    "@quizfit/lib": "workspace:*",
+    "@quizfit/prisma": "workspace:*",
     "cohere-ai": "^6.2.2",
     "ml-distance": "^4.0.1"
   }

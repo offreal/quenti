@@ -1,4 +1,4 @@
-import { env } from "@quenti/env/client";
+import { env } from "@quizfit/env/client";
 
 export async function register() {
   if (

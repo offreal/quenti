@@ -1,4 +1,4 @@
-import { Prisma, type PrismaClient } from "@quenti/prisma/client";
+import { Prisma, type PrismaClient } from "@quizfit/prisma/client";
 
 export const reorder = async (
   prisma: PrismaClient,

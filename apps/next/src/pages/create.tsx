@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-import { HeadSeo } from "@quenti/components/head-seo";
+import { HeadSeo } from "@quizfit/components/head-seo";
 
 import { Container } from "@chakra-ui/react";
 

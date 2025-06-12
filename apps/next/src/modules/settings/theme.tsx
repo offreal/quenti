@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ToggleGroup } from "@quenti/components/toggle-group";
+import { ToggleGroup } from "@quizfit/components/toggle-group";
 
 import { Text, VStack, useColorMode } from "@chakra-ui/react";
 

@@ -2,12 +2,12 @@ import { Box, Center, GridItem, Heading } from "@chakra-ui/react";
 
 import { NewsCard } from "../../news-card";
 
-export const Quenti10 = () => {
+export const QuizFit10 = () => {
   return (
     <GridItem>
       <NewsCard
-        title="Quenti 1.0"
-        description="Quenti has finally arrived, redesigned and rebuilt from the ground up."
+        title="Quiz.fit 1.0"
+        description="Quiz.fit has finally arrived, redesigned and rebuilt from the ground up."
         image={
           <Center overflow="hidden" w="full" h="full" position="relative">
             <Box

@@ -1,6 +1,6 @@
-import { Link } from "@quenti/components/link";
-import type { User } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { Link } from "@quizfit/components/link";
+import type { User } from "@quizfit/prisma/client";
+import { api } from "@quizfit/trpc";
 
 import {
   Avatar,
@@ -132,7 +132,7 @@ const StudentAvatar: React.FC<{
       position="relative"
       overflow="hidden"
     >
-      <Link href={`/@${user?.username}`}>
+      <Link href={`/${user?.username}`}>
         <Tooltip label={user?.name ?? user?.username}>
           <Avatar
             w="full"

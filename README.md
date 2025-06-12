@@ -1,6 +1,8 @@
-[![og:image](./apps/next/public/og-image.png)](https://quenti.io)
+[![og:image](./apps/next/public/og-image.png)](https://quiz.fit)
 
-The open-source Quizlet alternative.
+The open-source learning platform - Quiz.fit
+
+_This is a fork of Quenti, modified by offreal on June 12, 2025._
 
 ## The Stack
 
@@ -29,13 +31,13 @@ Get up and running by following these steps.
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/quenti-io/quenti
+   git clone https://github.com/offreal/quizfit
    ```
 
 2. Go to the project folder
 
    ```sh
-   cd quenti
+   cd quizfit
    ```
 
 3. Install dependencies with bun
@@ -48,7 +50,7 @@ Get up and running by following these steps.
 
    - Copy `.env.example` to `.env`
    - Use `openssl rand -base64 32` to generate a key for `NEXTAUTH_SECRET` and set it as the value in `.env`
-   - Use `openssl rand -base64 24` to generate a key for `QUENTI_ENCRYPTION_KEY` and set it as the value in `.env`
+   - Use `openssl rand -base64 24` to generate a key for `QUIZFIT_ENCRYPTION_KEY` and set it as the value in `.env`
    - You'll need to create a Google OAuth client ID from the [Google API Console](https://console.developers.google.com/). There are plenty of guides for this, like [this one from LogRocket](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#create-a-google-oauth-app) embedded:
 
      > ![Google OAuth Client Screenshot](https://files.readme.io/eca93af-GCPStep2OAuth.png)
@@ -93,4 +95,4 @@ bun run build
 bun start
 ```
 
-Navigate to http://localhost:3000 and Quenti should be up and running!
+Navigate to http://localhost:3000 and Quiz.fit should be up and running!

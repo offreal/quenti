@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@quizfit/components";
 
 import {
   Avatar,
@@ -79,7 +79,7 @@ export const CollaboratorPopoverContent = ({
               </Tag>
               <Button
                 as={Link}
-                href={`/@${user.username}`}
+                href={`/${user.username}`}
                 size="xs"
                 variant="link"
                 rightIcon={<IconExternalLink size={14} />}

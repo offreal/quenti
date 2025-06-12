@@ -2,11 +2,11 @@ import { EditorContent, type JSONContent } from "@tiptap/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
-import { env } from "@quenti/env/client";
-import { outfit } from "@quenti/lib/chakra-theme";
-import { api } from "@quenti/trpc";
+import { Link } from "@quizfit/components";
+import { HeadSeo } from "@quizfit/components/head-seo";
+import { env } from "@quizfit/env/client";
+import { outfit } from "@quizfit/lib/chakra-theme";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,

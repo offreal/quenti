@@ -1,5 +1,5 @@
-import { env } from "@quenti/env/server";
-import { chunkArray } from "@quenti/lib/array";
+import { env } from "@quizfit/env/server";
+import { chunkArray } from "@quizfit/lib/array";
 
 import { cohere } from "./cohere";
 

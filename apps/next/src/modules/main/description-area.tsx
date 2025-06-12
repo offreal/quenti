@@ -1,5 +1,5 @@
-import { Link } from "@quenti/components";
-import { avatarUrl } from "@quenti/lib/avatar";
+import { Link } from "@quizfit/components";
+import { avatarUrl } from "@quizfit/lib/avatar";
 
 import {
   Avatar,
@@ -34,7 +34,7 @@ export const DescriptionArea = () => {
             <HStack spacing="2">
               <Link
                 fontWeight={700}
-                href={`/@${user.username}`}
+                href={`/${user.username}`}
                 transition="color 0.2s ease-in-out"
                 _hover={{ color: highlight }}
                 className="highlight-block"

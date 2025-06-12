@@ -2,8 +2,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { avatarUrl } from "@quenti/lib/avatar";
-import { api } from "@quenti/trpc";
+import { avatarUrl } from "@quizfit/lib/avatar";
+import { api } from "@quizfit/trpc";
 
 import {
   Avatar,
@@ -53,7 +53,7 @@ export const FolderHeading = () => {
 
   const deleteFolder = api.folders.delete.useMutation({
     onSuccess: async () => {
-      await router.push("/home");
+      await router.push("/");
     },
   });
 

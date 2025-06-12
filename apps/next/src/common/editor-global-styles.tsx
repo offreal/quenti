@@ -1,4 +1,4 @@
-import { Highlight } from "@quenti/lib/editor";
+import { Highlight } from "@quizfit/lib/editor";
 
 export const EditorGlobalStyles: React.FC<{ small?: boolean }> = ({
   small = false,

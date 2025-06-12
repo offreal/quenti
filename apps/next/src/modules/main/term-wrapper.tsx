@@ -1,7 +1,7 @@
 import { useInView } from "framer-motion";
 import React from "react";
 
-import type { FacingTerm } from "@quenti/interfaces";
+import type { FacingTerm } from "@quizfit/interfaces";
 
 import { Box } from "@chakra-ui/react";
 

@@ -2,13 +2,13 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import { avatarUrl } from "@quenti/lib/avatar";
-import { outfit } from "@quenti/lib/chakra-theme";
-import { APP_URL } from "@quenti/lib/constants/url";
-import { useShortcut } from "@quenti/lib/hooks/use-shortcut";
-import type { StudySetType, User } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { env } from "@quizfit/env/client";
+import { avatarUrl } from "@quizfit/lib/avatar";
+import { outfit } from "@quizfit/lib/chakra-theme";
+import { APP_URL } from "@quizfit/lib/constants/url";
+import { useShortcut } from "@quizfit/lib/hooks/use-shortcut";
+import type { StudySetType, User } from "@quizfit/prisma/client";
+import { api } from "@quizfit/trpc";
 
 import {
   Avatar,
@@ -31,7 +31,6 @@ import {
 import {
   IconBooks,
   IconBuildingSkyscraper,
-  IconCloudDownload,
   IconFolder,
   IconFolderPlus,
   IconGhost3,
@@ -156,7 +155,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         });
       }
       for (const folder of data.folders) {
-        const url = `/@${folder.user.username}/folders/${
+        const url = `/${folder.user.username}/folders/${
           folder.slug ?? folder.id
         }`;
 
@@ -256,8 +255,8 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         icon: <IconHome />,
         name: "Home",
         label: "Navigate home",
-        action: (ctrl) => openLink(`/home`, ctrl),
-        shouldShow: () => window.location.pathname !== "/home",
+        action: (ctrl) => openLink(`/`, ctrl),
+        shouldShow: () => window.location.pathname !== "/",
       });
       if (me && me.orgMembership) {
         total.push({
@@ -274,10 +273,9 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         name: "Profile",
         label: "Navigate to your profile",
         action: (ctrl) =>
-          openLink(`/@${session.data?.user?.username || ""}`, ctrl),
+          openLink(`/${session.data?.user?.username || ""}`, ctrl),
         shouldShow: () =>
-          window.location.pathname !==
-          `/@${session.data?.user?.username || ""}`,
+          window.location.pathname !== `/${session.data?.user?.username || ""}`,
       });
       total.push({
         icon: <IconSettings />,
@@ -294,12 +292,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         action: (ctrl) => openLink(`/create`, ctrl),
         shouldShow: () => window.location.pathname !== "/create",
       });
-      total.push({
-        icon: <IconCloudDownload />,
-        name: "Import From Quizlet",
-        label: "Import a study set from Quizlet.com",
-        action: () => menuEventChannel.emit("openImportDialog"),
-      });
+
       total.push({
         icon: <IconFolderPlus />,
         name: "Create Folder",

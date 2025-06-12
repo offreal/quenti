@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import { useToast } from "@chakra-ui/react";
 
@@ -57,7 +57,7 @@ export default function Organizations() {
         render: Toast,
       });
 
-      await router.push("/home");
+      await router.push("/");
     },
   });
 

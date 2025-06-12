@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import type { SetFolderEntity } from "@quenti/interfaces";
+import { Modal } from "@quizfit/components/modal";
+import type { SetFolderEntity } from "@quizfit/interfaces";
 
 import {
   Button,

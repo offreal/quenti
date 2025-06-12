@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { type RouterOutputs, api } from "@quenti/trpc";
+import { type RouterOutputs, api } from "@quizfit/trpc";
 
 import { Loading } from "../components/loading";
 import { useLoading } from "../hooks/use-loading";
@@ -33,7 +33,7 @@ export const HydrateProfileData: React.FC<
 
   const queryKey = status == "authenticated" ? "get" : "getPublic";
   const profile = (api.profile[queryKey] as typeof api.profile.get).useQuery(
-    { username: (username || "").substring(1) },
+    { username: username || "" },
     {
       enabled: status !== "loading" && !!username,
     },

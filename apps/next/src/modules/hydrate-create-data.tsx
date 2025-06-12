@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import { editorEventChannel } from "../events/editor";
 import { useLoading } from "../hooks/use-loading";
@@ -48,7 +48,7 @@ export const HydrateCreateData: React.FC<React.PropsWithChildren> = ({
   }, []);
 
   const { loading } = useLoading();
-  if (loading || !data || isDirty) return <EditorLoading mode="create" />;
+  if (loading || !data || isDirty) return <EditorLoading />;
 
   return (
     <EditorContextLayer data={data} mode="create">

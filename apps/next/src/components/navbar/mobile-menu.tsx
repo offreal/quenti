@@ -3,8 +3,8 @@ import NextLink from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
+import { Link } from "@quizfit/components";
+import { WEBSITE_URL } from "@quizfit/lib/constants/url";
 
 import {
   Box,
@@ -20,7 +20,6 @@ import {
 import {
   IconBooks,
   IconChevronDown,
-  IconCloudDownload,
   IconFolder,
   IconSchool,
 } from "@tabler/icons-react";
@@ -34,7 +33,6 @@ export interface MobileMenuProps {
   onClose: () => void;
   onFolderClick: () => void;
   onClassClick: () => void;
-  onImportClick: () => void;
 }
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({
@@ -42,7 +40,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   onClose,
   onFolderClick,
   onClassClick,
-  onImportClick,
 }) => {
   const router = useRouter();
   React.useEffect(() => {
@@ -104,7 +101,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               fontSize="sm"
               onClick={async () => {
                 onClose();
-                await router.push("/home");
+                await router.push("/");
               }}
             >
               Home
@@ -151,11 +148,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                     }}
                   />
                 </NextLink>
-                <MenuOption
-                  icon={<IconCloudDownload size={20} />}
-                  label="Import from Quizlet"
-                  onClick={onImportClick}
-                />
+
                 <MenuDivider />
                 <MenuOption
                   icon={<IconFolder size={20} />}
@@ -197,6 +190,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                 href={`${WEBSITE_URL}/pricing`}
               >
                 Pricing
+              </Button>
+              <Button
+                variant="ghost"
+                colorScheme="gray"
+                as={Link}
+                href="https://github.com/offreal/quizfit"
+              >
+                Source code
               </Button>
               <Button
                 mt="4"

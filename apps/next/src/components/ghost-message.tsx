@@ -35,7 +35,7 @@ export const GhostMessage: React.FC<GhostMessageProps> = ({
           variant="outline"
           leftIcon={<IconArrowBackUp size={18} />}
           as={Link}
-          href="/home"
+          href="/"
         >
           Go home
         </Button>

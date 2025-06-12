@@ -10,10 +10,10 @@ import { fileURLToPath } from "url";
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
  * This is especially useful for Docker builds.
  */
-import "@quenti/env/client/client.mjs";
-import "@quenti/env/server/server.mjs";
+import "@quizfit/env/client/client.mjs";
+import "@quizfit/env/server/server.mjs";
 
-import pjson from "./package.json" assert { type: "json" };
+import pjson from "./package.json" with { type: "json" };
 
 const shouldAnalyzeBundles = process.env.ANALYZE === "true";
 const withBundleAnalyzer = (await import("@next/bundle-analyzer")).default({
@@ -32,11 +32,7 @@ if (process.env.ASSETS_BUCKET_URL)
   domains.push(new URL(process.env.ASSETS_BUCKET_URL).host);
 
 const getConsoleRewrites = async () => {
-  try {
-    return (await import("@quenti/console/next.mjs")).INTERNAL_REWRITES;
-  } catch {
-    return [];
-  }
+  return [];
 };
 
 /** @type {import("next").NextConfig} */
@@ -44,7 +40,7 @@ let config = {
   generateBuildId: () => nextBuildId({ dir: __dirname }),
   experimental: {
     optimizePackageImports: [
-      "@quenti/components",
+      "@quizfit/components",
       "@tabler/icons-react",
       "@chakra-ui/react",
       "@tremor/react",
@@ -63,23 +59,21 @@ let config = {
     domains,
   },
   transpilePackages: [
-    "@quenti/auth",
-    "@quenti/core",
-    "@quenti/emails",
-    "@quenti/env",
-    "@quenti/interfaces",
-    "@quenti/lib",
-    "@quenti/components",
-    "@quenti/branding",
-    "@quenti/payments",
-    "@quenti/enterprise",
-    "@quenti/prisma",
-    "@quenti/drizzle",
-    "@quenti/trpc",
-    "@quenti/inngest",
-    "@quenti/integrations",
-    "@quenti/types",
-    "@quenti/website",
+    "@quizfit/auth",
+    "@quizfit/core",
+    "@quizfit/emails",
+    "@quizfit/env",
+    "@quizfit/interfaces",
+    "@quizfit/lib",
+    "@quizfit/components",
+    "@quizfit/branding",
+    "@quizfit/payments",
+    "@quizfit/enterprise",
+    "@quizfit/prisma",
+    "@quizfit/drizzle",
+    "@quizfit/trpc",
+    "@quizfit/inngest",
+    "@quizfit/types",
   ],
   headers: async () => [
     {
@@ -95,10 +89,6 @@ let config = {
   rewrites: async () => [
     ...(await getConsoleRewrites()),
     {
-      source: "/",
-      destination: "/home",
-    },
-    {
       source: "/:id(_[a-zA-Z0-9]{10})",
       destination: "/share-resolver/:id",
     },
@@ -107,23 +97,19 @@ let config = {
       destination: "/class-resolver/:id",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)",
-      destination: "/profile/:profile",
-    },
-    {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug",
       destination: "/profile/:profile/folders/:slug",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug/flashcards",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/flashcards",
       destination: "/profile/:profile/folders/:slug/flashcards",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug/match",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/match",
       destination: "/profile/:profile/folders/:slug/match",
     },
     {
-      source: "/:profile(@[a-zA-Z0-9-_]+)/folders/:slug/match/leaderboard",
+      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/match/leaderboard",
       destination: "/profile/:profile/folders/:slug/match/leaderboard",
     },
     {
@@ -169,6 +155,11 @@ let config = {
     {
       source: "/a/:id/:assignmentId/:path*",
       destination: "/classes/:id/assignments/:assignmentId/:path*",
+    },
+    // Profile routes (must be last to avoid conflicts)
+    {
+      source: "/:profile([a-zA-Z0-9-_]+)",
+      destination: "/profile/:profile",
     },
   ],
   productionBrowserSourceMaps: false,

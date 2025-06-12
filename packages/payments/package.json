@@ -1,13 +1,13 @@
 {
-  "name": "@quenti/payments",
+  "name": "@quizfit/payments",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "@quenti/env": "workspace:*",
-    "@quenti/lib": "workspace:*",
-    "@quenti/prisma": "workspace:*",
+    "@quizfit/env": "workspace:*",
+    "@quizfit/lib": "workspace:*",
+    "@quizfit/prisma": "workspace:*",
     "next-axiom": "^0.18.0",
     "stripe": "^13.9.0"
   },

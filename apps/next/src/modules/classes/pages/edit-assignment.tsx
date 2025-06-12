@@ -10,7 +10,7 @@ import {
 } from "react-hook-form";
 import { z } from "zod";
 
-import { api } from "@quenti/trpc";
+import { api } from "@quizfit/trpc";
 
 import {
   Button,

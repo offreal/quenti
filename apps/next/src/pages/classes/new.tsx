@@ -5,8 +5,8 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { EnabledFeature } from "@quenti/lib/feature";
-import { api } from "@quenti/trpc";
+import { EnabledFeature } from "@quizfit/lib/feature";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,
@@ -54,7 +54,7 @@ export default function NewClass() {
   const { data: session } = useSession();
   const earlyClassAccess = useFeature(EnabledFeature.EarlyClassAccess);
 
-  useStudentRedirect("/home");
+  useStudentRedirect("/");
 
   const sendEvent = (id: string, name: string) => {
     void event("class_created", { id, name });
@@ -92,7 +92,7 @@ export default function NewClass() {
   React.useEffect(() => {
     if (!session?.user || session.user.organizationId || earlyClassAccess)
       return;
-    void router.push("/home");
+    void router.push("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session?.user]);
 

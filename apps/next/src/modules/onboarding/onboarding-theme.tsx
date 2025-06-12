@@ -1,4 +1,4 @@
-import { ToggleGroup } from "@quenti/components/toggle-group";
+import { ToggleGroup } from "@quizfit/components/toggle-group";
 
 import {
   Text,

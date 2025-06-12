@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { Folder } from "@quenti/prisma/client";
+import type { Folder } from "@quizfit/prisma/client";
 
 import { IconFolder } from "@tabler/icons-react";
 
@@ -28,7 +28,7 @@ export const FolderCard: React.FC<FolderCardProps> = ({
     <GenericCard
       title={folder.title}
       numItems={numSets}
-      url={`/@${user.username}/folders/${folder.slug ?? folder.id}`}
+      url={`/${user.username}/folders/${folder.slug ?? folder.id}`}
       itemsLabel={"set"}
       user={user}
       leftIcon={<IconFolder size={16} />}

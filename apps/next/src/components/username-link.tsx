@@ -1,4 +1,4 @@
-import { Link } from "@quenti/components";
+import { Link } from "@quizfit/components";
 
 import { useColorModeValue } from "@chakra-ui/react";
 
@@ -13,7 +13,7 @@ export const UsernameLink: React.FC<
       transition="color 0.2s ease-in-out"
       _hover={{ color: highlight }}
       className="highlight-block"
-      href={`/@${props.username || ""}`}
+      href={`/${props.username || ""}`}
       {...props}
     >
       {props.username}

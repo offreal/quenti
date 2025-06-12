@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import { api } from "@quenti/trpc";
+import { Modal } from "@quizfit/components/modal";
+import { api } from "@quizfit/trpc";
 
 import {
   Box,

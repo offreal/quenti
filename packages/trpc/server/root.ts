@@ -7,7 +7,6 @@ import { devRouter } from "./routers/dev";
 import { discoverableRouter } from "./routers/discoverable";
 import { foldersRouter } from "./routers/folders/_router";
 import { imagesRouter } from "./routers/images/_router";
-import { importRouter } from "./routers/import/_router";
 import { leaderboardRouter } from "./routers/leaderboard/_router";
 import { organizationsRouter } from "./routers/organizations/_router";
 import { profileRouter } from "./routers/profile/_router";
@@ -35,7 +34,7 @@ export const appRouter = createTRPCRouter({
   cortex: cortexRouter,
   leaderboard: leaderboardRouter,
   recent: recentRouter,
-  import: importRouter,
+
   images: imagesRouter,
   classes: classesRouter,
   assignments: assignmentsRouter,

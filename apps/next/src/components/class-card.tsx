@@ -1,6 +1,6 @@
-import { Link } from "@quenti/components";
-import type { Widen } from "@quenti/lib/widen";
-import type { UserType } from "@quenti/prisma/client";
+import { Link } from "@quizfit/components";
+import type { Widen } from "@quizfit/lib/widen";
+import type { UserType } from "@quizfit/prisma/client";
 
 import {
   Box,

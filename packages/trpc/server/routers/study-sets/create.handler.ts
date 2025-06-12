@@ -1,4 +1,4 @@
-import { bulkGenerateDistractors } from "@quenti/cortex/distractors";
+import { bulkGenerateDistractors } from "@quizfit/cortex/distractors";
 
 import { TRPCError } from "@trpc/server";
 

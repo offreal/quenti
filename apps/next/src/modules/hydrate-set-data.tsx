@@ -3,9 +3,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { EnabledFeature } from "@quenti/lib/feature";
-import type { Widen } from "@quenti/lib/widen";
-import { type RouterOutputs, api } from "@quenti/trpc";
+import { EnabledFeature } from "@quizfit/lib/feature";
+import type { Widen } from "@quizfit/lib/widen";
+import { type RouterOutputs, api } from "@quizfit/trpc";
 
 import { Loading } from "../components/loading";
 import { queryEventChannel } from "../events/query";
@@ -134,7 +134,7 @@ export const HydrateSetData: React.FC<
   return (
     <ContextLayer data={createInjectedData(data)}>
       <Head>
-        <title>{data.title} | Quenti</title>
+        <title>{data.title} | Quiz.fit</title>
       </Head>
       {children}
     </ContextLayer>

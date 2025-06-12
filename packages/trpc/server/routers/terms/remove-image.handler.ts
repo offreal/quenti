@@ -1,5 +1,5 @@
-import { env } from "@quenti/env/server";
-import { deleteTermAsset } from "@quenti/images/server";
+import { env } from "@quizfit/env/server";
+import { deleteTermAsset } from "@quizfit/images/server";
 
 import { TRPCError } from "@trpc/server";
 
