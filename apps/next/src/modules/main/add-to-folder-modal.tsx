@@ -3,6 +3,7 @@ import React from "react";
 
 import { Link } from "@quizfit/components";
 import { Modal } from "@quizfit/components/modal";
+import { getFolderUrl } from "@quizfit/lib/profile-url";
 import { api } from "@quizfit/trpc";
 
 import {
@@ -166,7 +167,7 @@ const FolderCard: React.FC<FolderCardProps> = ({
             <IconFolder size={18} />
           </Box>
           <Link
-            href={`/${user.username}/folders/${slug ?? folderId}`}
+            href={getFolderUrl(user.username, slug ?? folderId)}
             transition="color 0.2s ease-in-out"
             _hover={{
               color: "blue.200",

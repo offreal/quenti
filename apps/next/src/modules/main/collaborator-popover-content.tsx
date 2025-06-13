@@ -1,4 +1,5 @@
 import { Link } from "@quizfit/components";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
   Avatar,
@@ -79,7 +80,7 @@ export const CollaboratorPopoverContent = ({
               </Tag>
               <Button
                 as={Link}
-                href={`/${user.username}`}
+                href={getProfileUrl(user.username)}
                 size="xs"
                 variant="link"
                 rightIcon={<IconExternalLink size={14} />}

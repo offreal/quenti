@@ -38,7 +38,7 @@ export const changeUsernameHandler = async ({
       id: ctx.session.user.id,
     },
     data: {
-      username: input.username.toLowerCase(),
+      username: input.username,
     },
   });
 };

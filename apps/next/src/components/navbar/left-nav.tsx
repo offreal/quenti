@@ -59,12 +59,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
         justify="space-between"
         className="nav-content__mobile"
       >
-        <HStack
-          as={Link}
-          href={session?.user ? "/" : WEBSITE_URL}
-          rel="home"
-          ml="2"
-        >
+        <HStack as={Link} href="/" rel="home" ml="2">
           <Logo boxSize="24px" />
           <Heading
             as="p"

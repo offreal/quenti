@@ -3,6 +3,7 @@ import React from "react";
 
 import { Link } from "@quizfit/components";
 import { env } from "@quizfit/env/client";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 import { api } from "@quizfit/trpc";
 
 import {
@@ -55,7 +56,7 @@ export const ProfileInfo = () => {
           variant="outline"
           leftIcon={<IconUser size={18} />}
           as={Link}
-          href={`/${session!.user!.username}`}
+          href={getProfileUrl(session!.user!.username)}
           w="max"
         >
           View your profile

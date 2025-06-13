@@ -2,6 +2,7 @@ import React from "react";
 
 import { Link } from "@quizfit/components";
 import { avatarUrl } from "@quizfit/lib/avatar";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 import type { User } from "@quizfit/prisma/client";
 
 import {
@@ -128,7 +129,7 @@ const OrganizationUserRaw: React.FC<OrganizationUserProps> = ({
               colorScheme="gray"
               size="sm"
               roundedRight={canManage ? "none" : "md"}
-              href={`/${user.username}`}
+              href={getProfileUrl(user.username)}
             />
           </Skeleton>
           {canManage && (

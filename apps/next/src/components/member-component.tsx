@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Link } from "@quizfit/components";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 import type { User } from "@quizfit/prisma/client";
 
 import {
@@ -249,7 +250,7 @@ const Options: React.FC<
                   w="full"
                   h="full"
                   as={Link}
-                  href={`/${user?.username || ""}`}
+                  href={getProfileUrl(user?.username)}
                   display="flex"
                   alignItems="center"
                   justifyContent="center"

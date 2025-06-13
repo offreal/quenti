@@ -1,4 +1,5 @@
 import { Link } from "@quizfit/components";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import { useColorModeValue } from "@chakra-ui/react";
 
@@ -13,7 +14,7 @@ export const UsernameLink: React.FC<
       transition="color 0.2s ease-in-out"
       _hover={{ color: highlight }}
       className="highlight-block"
-      href={`/${props.username || ""}`}
+      href={getProfileUrl(props.username)}
       {...props}
     >
       {props.username}
