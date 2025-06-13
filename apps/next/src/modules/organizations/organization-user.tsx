@@ -128,7 +128,7 @@ const OrganizationUserRaw: React.FC<OrganizationUserProps> = ({
               colorScheme="gray"
               size="sm"
               roundedRight={canManage ? "none" : "md"}
-              href={`/${user.username}`}
+              href={`/u/${user.username}`}
             />
           </Skeleton>
           {canManage && (

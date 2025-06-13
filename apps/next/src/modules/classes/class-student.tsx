@@ -262,7 +262,7 @@ const Options: React.FC<
               <LinkOverlay
                 w="full"
                 h="full"
-                href={`/${user?.username || ""}`}
+                href={`/u/${user?.username || ""}`}
                 as={Link}
                 display="flex"
                 alignItems="center"

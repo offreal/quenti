@@ -132,7 +132,7 @@ const StudentAvatar: React.FC<{
       position="relative"
       overflow="hidden"
     >
-      <Link href={`/${user?.username}`}>
+      <Link href={`/u/${user?.username}`}>
         <Tooltip label={user?.name ?? user?.username}>
           <Avatar
             w="full"

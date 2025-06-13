@@ -34,7 +34,7 @@ export const DescriptionArea = () => {
             <HStack spacing="2">
               <Link
                 fontWeight={700}
-                href={`/${user.username}`}
+                href={`/u/${user.username}`}
                 transition="color 0.2s ease-in-out"
                 _hover={{ color: highlight }}
                 className="highlight-block"

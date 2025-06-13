@@ -273,9 +273,10 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         name: "Profile",
         label: "Navigate to your profile",
         action: (ctrl) =>
-          openLink(`/${session.data?.user?.username || ""}`, ctrl),
+          openLink(`/u/${session.data?.user?.username || ""}`, ctrl),
         shouldShow: () =>
-          window.location.pathname !== `/${session.data?.user?.username || ""}`,
+          window.location.pathname !==
+          `/u/${session.data?.user?.username || ""}`,
       });
       total.push({
         icon: <IconSettings />,

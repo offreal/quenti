@@ -97,19 +97,19 @@ let config = {
       destination: "/class-resolver/:id",
     },
     {
-      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug",
+      source: "/u/:profile([a-zA-Z0-9-_]+)/folders/:slug",
       destination: "/profile/:profile/folders/:slug",
     },
     {
-      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/flashcards",
+      source: "/u/:profile([a-zA-Z0-9-_]+)/folders/:slug/flashcards",
       destination: "/profile/:profile/folders/:slug/flashcards",
     },
     {
-      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/match",
+      source: "/u/:profile([a-zA-Z0-9-_]+)/folders/:slug/match",
       destination: "/profile/:profile/folders/:slug/match",
     },
     {
-      source: "/:profile([a-zA-Z0-9-_]+)/folders/:slug/match/leaderboard",
+      source: "/u/:profile([a-zA-Z0-9-_]+)/folders/:slug/match/leaderboard",
       destination: "/profile/:profile/folders/:slug/match/leaderboard",
     },
     {
@@ -156,9 +156,9 @@ let config = {
       source: "/a/:id/:assignmentId/:path*",
       destination: "/classes/:id/assignments/:assignmentId/:path*",
     },
-    // Profile routes (must be last to avoid conflicts)
+    // Profile routes with /u/ prefix to avoid conflicts
     {
-      source: "/:profile([a-zA-Z0-9-_]+)",
+      source: "/u/:profile([a-zA-Z0-9-_]+)",
       destination: "/profile/:profile",
     },
   ],

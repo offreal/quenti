@@ -166,7 +166,7 @@ const FolderCard: React.FC<FolderCardProps> = ({
             <IconFolder size={18} />
           </Box>
           <Link
-            href={`/${user.username}/folders/${slug ?? folderId}`}
+            href={`/u/${user.username}/folders/${slug ?? folderId}`}
             transition="color 0.2s ease-in-out"
             _hover={{
               color: "blue.200",

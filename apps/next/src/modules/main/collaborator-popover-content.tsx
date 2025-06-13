@@ -79,7 +79,7 @@ export const CollaboratorPopoverContent = ({
               </Tag>
               <Button
                 as={Link}
-                href={`/${user.username}`}
+                href={`/u/${user.username}`}
                 size="xs"
                 variant="link"
                 rightIcon={<IconExternalLink size={14} />}

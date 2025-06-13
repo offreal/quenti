@@ -55,7 +55,7 @@ export const ProfileInfo = () => {
           variant="outline"
           leftIcon={<IconUser size={18} />}
           as={Link}
-          href={`/${session!.user!.username}`}
+          href={`/u/${session!.user!.username}`}
           w="max"
         >
           View your profile
