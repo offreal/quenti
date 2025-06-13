@@ -1,4 +1,5 @@
 import { Link } from "@quizfit/components/link";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 import type { User } from "@quizfit/prisma/client";
 import { api } from "@quizfit/trpc";
 
@@ -132,7 +133,7 @@ const StudentAvatar: React.FC<{
       position="relative"
       overflow="hidden"
     >
-      <Link href={`/u/${user?.username}`}>
+      <Link href={getProfileUrl(user?.username)}>
         <Tooltip label={user?.name ?? user?.username}>
           <Avatar
             w="full"

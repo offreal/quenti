@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 
+import { getFolderUrl } from "@quizfit/lib/profile-url";
+
 import { Box, HStack, Heading, SimpleGrid, Skeleton } from "@chakra-ui/react";
 
 import { IconCards, IconLayersSubtract } from "@tabler/icons-react";
@@ -12,7 +14,7 @@ export const LinkArea = () => {
   const slug = router.query.slug as string;
   const folder = useFolder();
 
-  const folderUrl = `/u/${folder.user.username}/folders/${slug}`;
+  const folderUrl = getFolderUrl(folder.user.username, slug);
 
   return (
     <SimpleGrid

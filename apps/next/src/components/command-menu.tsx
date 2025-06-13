@@ -7,6 +7,7 @@ import { avatarUrl } from "@quizfit/lib/avatar";
 import { outfit } from "@quizfit/lib/chakra-theme";
 import { APP_URL } from "@quizfit/lib/constants/url";
 import { useShortcut } from "@quizfit/lib/hooks/use-shortcut";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 import type { StudySetType, User } from "@quizfit/prisma/client";
 import { api } from "@quizfit/trpc";
 
@@ -273,10 +274,10 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         name: "Profile",
         label: "Navigate to your profile",
         action: (ctrl) =>
-          openLink(`/u/${session.data?.user?.username || ""}`, ctrl),
+          openLink(getProfileUrl(session.data?.user?.username), ctrl),
         shouldShow: () =>
           window.location.pathname !==
-          `/u/${session.data?.user?.username || ""}`,
+          getProfileUrl(session.data?.user?.username),
       });
       total.push({
         icon: <IconSettings />,

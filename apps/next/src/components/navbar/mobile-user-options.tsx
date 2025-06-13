@@ -2,6 +2,7 @@ import { signOut, useSession } from "next-auth/react";
 
 import { Link } from "@quizfit/components";
 import { avatarUrl } from "@quizfit/lib/avatar";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
   Avatar,
@@ -85,7 +86,7 @@ export const MobileUserOptions: React.FC<MobileUserOptionsProps> = ({
         <Button
           variant="outline"
           as={Link}
-          href={`/u/${user.username}`}
+          href={getProfileUrl(user.username)}
           leftIcon={<IconUserCircle size={18} />}
         >
           Profile

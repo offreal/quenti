@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import { avatarUrl } from "@quizfit/lib/avatar";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
   Avatar,
@@ -87,7 +88,7 @@ export const UserMenu = () => {
         marginTop={2}
         shadow="lg"
       >
-        <Link href={`/u/${user.username}`} passHref>
+        <Link href={getProfileUrl(user.username)} passHref>
           <MenuOption icon={<IconUser size={18} />} label="Profile" />
         </Link>
         <Link href="/settings" passHref>

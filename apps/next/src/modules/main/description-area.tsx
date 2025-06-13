@@ -1,5 +1,6 @@
 import { Link } from "@quizfit/components";
 import { avatarUrl } from "@quizfit/lib/avatar";
+import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
   Avatar,
@@ -34,12 +35,12 @@ export const DescriptionArea = () => {
             <HStack spacing="2">
               <Link
                 fontWeight={700}
-                href={`/u/${user.username}`}
+                href={getProfileUrl(user.username)}
                 transition="color 0.2s ease-in-out"
                 _hover={{ color: highlight }}
                 className="highlight-block"
               >
-                {user.username}
+                {user.username || ""}
               </Link>
               {user.verified && (
                 <Box color="blue.300">

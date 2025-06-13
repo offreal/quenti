@@ -14,9 +14,7 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
 
       let uniqueUsername = null;
       if (name) {
-        const sanitized = name
-          .replace(USERNAME_REPLACE_REGEXP, "")
-          .toLowerCase();
+        const sanitized = name.replace(USERNAME_REPLACE_REGEXP, "") || "user";
         uniqueUsername = sanitized;
 
         const existing = (
@@ -24,15 +22,17 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
             where: {
               username: {
                 not: null,
-                startsWith: sanitized.toLowerCase(),
+                startsWith: sanitized,
               },
             },
           })
-        ).map((user) => user.username);
+        ).map((user) => user.username?.toLowerCase());
 
         if (existing.length) {
           let suffix = "1";
-          while (existing.some((u) => u === sanitized + suffix)) {
+          while (
+            existing.some((u) => u === (sanitized + suffix).toLowerCase())
+          ) {
             suffix = (Number(suffix) + 1).toString();
           }
           uniqueUsername = sanitized + suffix;
@@ -48,15 +48,15 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
 
       const associatedDomain = isOrgEligible
         ? await p.organizationDomain.findFirst({
-            where: {
-              domain,
-              AND: {
-                organization: {
-                  published: true,
-                },
+          where: {
+            domain,
+            AND: {
+              organization: {
+                published: true,
               },
             },
-          })
+          },
+        })
         : undefined;
 
       let userType: UserType = "Student";
@@ -67,7 +67,7 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
             if (regex.test(base!)) {
               userType = "Teacher";
             }
-          } catch {}
+          } catch { }
         } else {
           userType = "Teacher";
         }
@@ -82,7 +82,7 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
       const user = await p.user.create({
         data: {
           ...data,
-          username: uniqueUsername?.toLowerCase(),
+          username: uniqueUsername,
           organizationId: associatedDomain?.orgId,
           displayName: !!data.name,
           isOrgEligible,
