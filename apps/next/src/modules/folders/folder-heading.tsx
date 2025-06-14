@@ -2,11 +2,9 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { avatarUrl } from "@quizfit/lib/avatar";
 import { api } from "@quizfit/trpc";
 
 import {
-  Avatar,
   Button,
   ButtonGroup,
   Center,
@@ -32,6 +30,7 @@ import {
   IconTrash,
 } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { ConfirmModal } from "../../components/confirm-modal";
 import { MenuOption } from "../../components/menu-option";
 import { UsernameLink } from "../../components/username-link";
@@ -95,7 +94,12 @@ export const FolderHeading = () => {
           </Heading>
           <HStack spacing="4">
             <HStack>
-              <Avatar width="20px" height="20px" src={avatarUrl(folder.user)} />
+              <Avatar
+                imageWidth={20}
+                imageHeight={20}
+                src={folder.user.image}
+                alt="User avatar"
+              />
               <UsernameLink username={folder.user.username} />
             </HStack>
             <HStack

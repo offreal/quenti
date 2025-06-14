@@ -2,11 +2,9 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
-import { avatarUrl } from "@quizfit/lib/avatar";
 import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
-  Avatar,
   AvatarBadge,
   Menu,
   MenuButton,
@@ -30,6 +28,7 @@ import {
 } from "@tabler/icons-react";
 
 import { useMe } from "../../hooks/use-me";
+import { Avatar } from "../avatar";
 import { MenuOption } from "../menu-option";
 import { TeacherOnly } from "../teacher-only";
 
@@ -55,10 +54,8 @@ export const UserMenu = () => {
         <Wrap spacing={3} align="center" overflow="visible" color={color}>
           <WrapItem>
             <Avatar
-              src={avatarUrl({
-                ...user,
-                image: user.image!,
-              })}
+              src={user.image}
+              alt="User avatar"
               size="sm"
               className="highlight-block"
             >

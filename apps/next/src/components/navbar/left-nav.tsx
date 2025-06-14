@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import React from "react";
 
 import { Link } from "@quizfit/components";
+import { Logo } from "@quizfit/components";
 import { outfit } from "@quizfit/lib/chakra-theme";
 import { WEBSITE_URL } from "@quizfit/lib/constants/url";
 import { EnabledFeature } from "@quizfit/lib/feature";
@@ -28,7 +29,6 @@ import {
   IconSparkles,
 } from "@tabler/icons-react";
 
-import { Logo } from "../../../../../packages/components/logo";
 import { useFeature } from "../../hooks/use-feature";
 import { useMe } from "../../hooks/use-me";
 import { MenuOption } from "../menu-option";

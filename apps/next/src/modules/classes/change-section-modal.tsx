@@ -2,12 +2,10 @@ import React from "react";
 
 import { Modal } from "@quizfit/components/modal";
 import { allEqual } from "@quizfit/lib/array";
-import { avatarUrl } from "@quizfit/lib/avatar";
 import type { User } from "@quizfit/prisma/client";
 import { api } from "@quizfit/trpc";
 
 import {
-  Avatar,
   AvatarGroup,
   Box,
   Button,
@@ -20,6 +18,7 @@ import {
 
 import { IconArrowRight } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { useClass } from "../../hooks/use-class";
 import { SectionSelect } from "./section-select";
 import { addressStudents } from "./utils/address-students";
@@ -105,7 +104,12 @@ export const ChangeSectionModal: React.FC<ChangeSectionModalProps> = ({
               <HStack spacing="3">
                 <AvatarGroup size="sm" max={10} spacing="-6px">
                   {members.map((user) => (
-                    <Avatar key={user.id} src={avatarUrl(user.user)} />
+                    <Avatar
+                      key={user.id}
+                      src={user.user.image}
+                      size="sm"
+                      alt="Student avatar"
+                    />
                   ))}
                 </AvatarGroup>
               </HStack>
@@ -114,7 +118,11 @@ export const ChangeSectionModal: React.FC<ChangeSectionModalProps> = ({
           ) : (
             <>
               <HStack spacing="4">
-                <Avatar src={avatarUrl(members[0]!.user)} size="sm" />
+                <Avatar
+                  src={members[0]!.user.image}
+                  size="sm"
+                  alt="Student avatar"
+                />
                 {switcher}
               </HStack>
             </>

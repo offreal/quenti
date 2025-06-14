@@ -3,7 +3,6 @@ import React from "react";
 import { outfit } from "@quizfit/lib/chakra-theme";
 
 import {
-  Avatar,
   Flex,
   HStack,
   Skeleton,
@@ -13,6 +12,8 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+
+import { Avatar } from "./avatar";
 
 interface OnboardingMemberProps {
   image?: string | null;
@@ -44,7 +45,7 @@ export const OnboardingMember: React.FC<OnboardingMemberProps> = ({
       }}
     >
       <Skeleton isLoaded={isLoaded} fitContent rounded="full">
-        <Avatar size="sm" src={image || undefined} />
+        <Avatar size="sm" src={image} alt="Member avatar" />
       </Skeleton>
       <Stack spacing="0">
         <Skeleton isLoaded={isLoaded} fitContent>

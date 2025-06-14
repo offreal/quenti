@@ -1,10 +1,8 @@
 import { Modal } from "@quizfit/components/modal";
-import { avatarUrl } from "@quizfit/lib/avatar";
 import type { User } from "@quizfit/prisma/client";
 import { api } from "@quizfit/trpc";
 
 import {
-  Avatar,
   AvatarGroup,
   Button,
   ButtonGroup,
@@ -14,6 +12,7 @@ import {
 
 import { IconUserX } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { useClass } from "../../hooks/use-class";
 import { addressStudents } from "./utils/address-students";
 
@@ -62,7 +61,12 @@ export const RemoveStudentsModal: React.FC<RemoveStudentsModalProps> = ({
           {multiple && (
             <AvatarGroup size="sm" max={10} spacing="-6px">
               {members.map((member) => (
-                <Avatar key={member.id} src={avatarUrl(member.user)} />
+                <Avatar
+                  key={member.id}
+                  src={member.user.image}
+                  size="sm"
+                  alt="Student avatar"
+                />
               ))}
             </AvatarGroup>
           )}

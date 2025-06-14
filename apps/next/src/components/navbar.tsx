@@ -4,11 +4,9 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import { Link } from "@quizfit/components";
-import { avatarUrl } from "@quizfit/lib/avatar";
 import { EnabledFeature } from "@quizfit/lib/feature";
 
 import {
-  Avatar,
   AvatarBadge,
   Box,
   Button,
@@ -23,6 +21,7 @@ import { IconMenu, IconX } from "@tabler/icons-react";
 
 import { menuEventChannel } from "../events/menu";
 import { useFeature } from "../hooks/use-feature";
+import { Avatar } from "./avatar";
 import LeftNav from "./navbar/left-nav";
 import MobileMenu from "./navbar/mobile-menu";
 import UserMenu from "./navbar/user-menu";
@@ -95,10 +94,8 @@ export const Navbar: React.FC = () => {
             <HStack>
               {user && (
                 <Avatar
-                  src={avatarUrl({
-                    ...user,
-                    image: user.image!,
-                  })}
+                  src={user.image}
+                  alt="User avatar"
                   size="sm"
                   className="highlight-block"
                 >

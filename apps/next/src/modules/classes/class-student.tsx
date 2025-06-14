@@ -5,7 +5,6 @@ import { getProfileUrl } from "@quizfit/lib/profile-url";
 import type { User } from "@quizfit/prisma/client";
 
 import {
-  Avatar,
   Box,
   Button,
   ButtonGroup,
@@ -36,6 +35,7 @@ import {
   IconUserX,
 } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { MenuOptionPure } from "../../components/menu-option";
 
 export interface ClassStudentProps {
@@ -151,9 +151,11 @@ export const ClassStudentRaw: React.FC<ClassStudentProps> = ({
           >
             <Skeleton rounded="full" fitContent isLoaded={!skeleton}>
               <Avatar
-                src={user.image || undefined}
-                width="36px"
-                height="36px"
+                src={user.image}
+                size="sm"
+                imageWidth={36}
+                imageHeight={36}
+                alt="User avatar"
               />
             </Skeleton>
             <HStack spacing="4">

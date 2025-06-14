@@ -1,10 +1,8 @@
 import React from "react";
 
 import { Link } from "@quizfit/components/link";
-import { avatarUrl } from "@quizfit/lib/avatar";
 
 import {
-  Avatar,
   Box,
   Card,
   Flex,
@@ -29,6 +27,7 @@ import {
 } from "@tabler/icons-react";
 
 import { plural } from "../utils/string";
+import { Avatar } from "./avatar";
 import { MenuOption } from "./menu-option";
 
 export interface GenericCardProps {
@@ -138,10 +137,10 @@ export const GenericCard = ({
             {!bottom ? (
               <>
                 <Avatar
-                  src={avatarUrl(user)}
+                  src={user.image}
                   size="xs"
                   className="highlight-block"
-                  pointerEvents="none"
+                  alt="User avatar"
                 />
                 <HStack spacing={1}>
                   <Text

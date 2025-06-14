@@ -1,8 +1,9 @@
 import type { FacingTerm } from "@quizfit/interfaces";
 
-import { Avatar, Popover, PopoverTrigger } from "@chakra-ui/react";
+import { Popover, PopoverTrigger } from "@chakra-ui/react";
 
 import { CollaboratorPopoverContent } from "../modules/main/collaborator-popover-content";
+import { Avatar } from "./avatar";
 
 export interface TermAuthorAvatarProps {
   user: NonNullable<FacingTerm["author"]>;
@@ -32,8 +33,11 @@ export const TermAuthorAvatar: React.FC<TermAuthorAvatarProps> = ({
             height: 24,
             overflow: "hidden",
           }}
-          src={user.image || ""}
-          icon={<></>}
+          src={user.image}
+          size="xs"
+          imageWidth={24}
+          imageHeight={24}
+          alt="User avatar"
         />
       </PopoverTrigger>
       <CollaboratorPopoverContent type="collaborator" user={user} />
