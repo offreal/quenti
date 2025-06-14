@@ -5,7 +5,6 @@
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@quizfit/branding": "workspace:*",
-    "@quizfit/env": "workspace:*",
     "@quizfit/interfaces": "workspace:*",
     "@quizfit/lib": "workspace:*",
     "@quizfit/prisma": "workspace:*",
