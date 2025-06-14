@@ -1,11 +1,9 @@
 import { signOut, useSession } from "next-auth/react";
 
 import { Link } from "@quizfit/components";
-import { avatarUrl } from "@quizfit/lib/avatar";
 import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
-  Avatar,
   AvatarBadge,
   Button,
   HStack,
@@ -28,6 +26,7 @@ import {
 } from "@tabler/icons-react";
 
 import { useMe } from "../../hooks/use-me";
+import { Avatar } from "../avatar";
 import { TeacherOnly } from "../teacher-only";
 
 interface MobileUserOptionsProps {
@@ -51,10 +50,8 @@ export const MobileUserOptions: React.FC<MobileUserOptionsProps> = ({
         <Wrap spacing={3} align="center" overflow="visible" color={color}>
           <WrapItem>
             <Avatar
-              src={avatarUrl({
-                ...user,
-                image: user.image!,
-              })}
+              src={user.image}
+              alt="User avatar"
               size="sm"
               className="highlight-block"
             >

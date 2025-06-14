@@ -1,9 +1,7 @@
 import { Link } from "@quizfit/components";
-import { avatarUrl } from "@quizfit/lib/avatar";
 import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
-  Avatar,
   Box,
   Flex,
   HStack,
@@ -15,6 +13,7 @@ import {
 
 import { IconDiscountCheck } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { useSet } from "../../hooks/use-set";
 import { ActionArea } from "./action-area";
 
@@ -30,7 +29,12 @@ export const DescriptionArea = () => {
         gap={{ base: 8, sm: 0 }}
       >
         <HStack spacing={4}>
-          <Avatar src={avatarUrl(user)} size="md" className="highlight-block" />
+          <Avatar
+            src={user.image}
+            size="md"
+            className="highlight-block"
+            alt="User avatar"
+          />
           <Stack spacing={0}>
             <HStack spacing="2">
               <Link

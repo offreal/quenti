@@ -1,10 +1,8 @@
 import React from "react";
 
-import { avatarUrl } from "@quizfit/lib/avatar";
 import type { StudySetVisibility } from "@quizfit/prisma/client";
 
 import {
-  Avatar,
   Box,
   Flex,
   HStack,
@@ -18,6 +16,7 @@ import { IconFolder } from "@tabler/icons-react";
 
 import { visibilityIcon } from "../common/visibility-icon";
 import { plural } from "../utils/string";
+import { Avatar } from "./avatar";
 
 export interface SelectableGenericCard {
   type: "set" | "folder";
@@ -105,9 +104,10 @@ export const SelectableGenericCard: React.FC<SelectableGenericCard> = ({
         {!bottom ? (
           <HStack spacing="2">
             <Avatar
-              src={avatarUrl(user)}
+              src={user.image}
               size="xs"
               className="highlight-block"
+              alt="User avatar"
             />
             <Text
               fontSize="sm"

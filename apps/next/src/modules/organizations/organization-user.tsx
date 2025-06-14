@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Link } from "@quizfit/components";
-import { avatarUrl } from "@quizfit/lib/avatar";
 import { getProfileUrl } from "@quizfit/lib/profile-url";
 import type { User } from "@quizfit/prisma/client";
 
@@ -74,10 +73,7 @@ const OrganizationUserRaw: React.FC<OrganizationUserProps> = ({
           h="32px"
           w="32px"
         >
-          <Avatar
-            size="sm"
-            src={!skeleton ? avatarUrl({ ...user, image: user.image! }) : ""}
-          />
+          <Avatar size="sm" src={!skeleton ? user.image! : ""} />
         </Skeleton>
       </Td>
       <Td w="full">

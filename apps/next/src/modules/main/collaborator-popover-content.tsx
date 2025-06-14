@@ -2,7 +2,6 @@ import { Link } from "@quizfit/components";
 import { getProfileUrl } from "@quizfit/lib/profile-url";
 
 import {
-  Avatar,
   Box,
   Button,
   HStack,
@@ -15,6 +14,7 @@ import {
 
 import { IconExternalLink } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import type { CollaboratorIcon } from "./collab-details";
 
 export const CollaboratorPopoverContent = ({
@@ -41,7 +41,7 @@ export const CollaboratorPopoverContent = ({
         >
           <Stack spacing="3">
             <HStack spacing="3">
-              <Avatar src={user.image || ""} size="sm" />
+              <Avatar src={user.image} size="sm" alt="User avatar" />
               <Stack spacing="0">
                 <Text fontWeight={700} fontSize="sm">
                   {user.name ?? user.username}

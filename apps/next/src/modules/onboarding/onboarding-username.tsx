@@ -6,7 +6,6 @@ import { env } from "@quizfit/env/client";
 import { api } from "@quizfit/trpc";
 
 import {
-  Avatar,
   Button,
   ButtonGroup,
   HStack,
@@ -18,6 +17,7 @@ import {
 import { IconUpload } from "@tabler/icons-react";
 
 import { ToastWrapper } from "../../common/toast-wrapper";
+import { Avatar } from "../../components/avatar";
 import { ChangeUsernameInput } from "../../components/change-username-input";
 import { mutationEventChannel } from "../../events/mutation";
 import { getSafeRedirectUrl } from "../../lib/urls";
@@ -88,14 +88,10 @@ export const OnboardingUsername = () => {
             />
             <HStack spacing="6" w="full" mt="3">
               <Avatar
-                src={image || ""}
-                bg="gray.200"
-                _dark={{
-                  bg: "gray.700",
-                }}
-                icon={<></>}
-                width="60px"
-                height="60px"
+                src={image}
+                alt="User avatar"
+                imageWidth={60}
+                imageHeight={60}
                 className="highlight-block"
                 style={{
                   borderRadius: "50%",

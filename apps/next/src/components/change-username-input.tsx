@@ -44,7 +44,7 @@ export const ChangeUsernameInput: React.FC<ChangeUsernameInputProps> = ({
   const addonBg = useColorModeValue("gray.200", "gray.700");
 
   const [usernameValue, setUsernameValue] = React.useState(
-    session.data!.user!.username || "",
+    session.data?.user?.username || "",
   );
   const usernameRef = React.useRef(usernameValue);
   usernameRef.current = usernameValue;
@@ -81,7 +81,7 @@ export const ChangeUsernameInput: React.FC<ChangeUsernameInputProps> = ({
     checkUsername.isLoading ||
     debouncedUsername !== usernameValue ||
     !checkUsername.data?.available ||
-    (disabledIfUnchanged && usernameValue === session.data!.user!.username);
+    (disabledIfUnchanged && usernameValue === session.data?.user?.username);
 
   React.useEffect(() => {
     const mutate = () =>

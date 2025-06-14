@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "@quizfit/components";
 
 import {
-  Avatar,
   Box,
   Button,
   ButtonGroup,
@@ -20,6 +19,7 @@ import {
 
 import { IconExternalLink, IconUsersGroup } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { useSet } from "../../hooks/use-set";
 import { useAssignmentButton } from "../classes/assignments/use-assignment-button";
 import { ActionArea } from "./action-area";
@@ -162,10 +162,9 @@ export const CollabDetails = () => {
                         _dark={{
                           bg: "gray.700",
                         }}
-                        icon={<></>}
-                        getInitials={() => ""}
-                        src={c.user.image || ""}
+                        src={c.user.image}
                         size="sm"
+                        alt="User avatar"
                         className="highlight-block"
                       />
                       <Box w="full" h="2" position="relative">

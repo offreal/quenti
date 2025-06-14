@@ -48,15 +48,15 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
 
       const associatedDomain = isOrgEligible
         ? await p.organizationDomain.findFirst({
-          where: {
-            domain,
-            AND: {
-              organization: {
-                published: true,
+            where: {
+              domain,
+              AND: {
+                organization: {
+                  published: true,
+                },
               },
             },
-          },
-        })
+          })
         : undefined;
 
       let userType: UserType = "Student";
@@ -67,7 +67,7 @@ export function CustomPrismaAdapter(p: PrismaClient): Adapter {
             if (regex.test(base!)) {
               userType = "Teacher";
             }
-          } catch { }
+          } catch {}
         } else {
           userType = "Teacher";
         }

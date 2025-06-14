@@ -1,9 +1,6 @@
 import { useRouter } from "next/router";
 
-import { avatarUrl } from "@quizfit/lib/avatar";
-
 import {
-  Avatar,
   Box,
   Flex,
   HStack,
@@ -17,6 +14,7 @@ import {
 
 import { IconDiscountCheck } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { useProfile } from "../../hooks/use-profile";
 
 export const ProfileArea = () => {
@@ -25,7 +23,12 @@ export const ProfileArea = () => {
 
   return (
     <HStack spacing="6">
-      <Avatar src={avatarUrl(profile)} size="lg" className="highlight-block" />
+      <Avatar
+        src={profile.image}
+        size="lg"
+        className="highlight-block"
+        alt="Profile avatar"
+      />
       <Flex
         flexDir="column"
         justifyContent={profile.name ? "space-between" : "center"}
@@ -66,7 +69,7 @@ ProfileArea.Skeleton = function ProfileAreaSkeleton() {
   return (
     <HStack spacing="6">
       <Skeleton fitContent h="max-content" rounded="full">
-        <Avatar size="lg" />
+        <Avatar size="lg" alt="Profile avatar" />
       </Skeleton>
       <Flex flexDir="column" justifyContent="space-between" h="16">
         <Skeleton fitContent rounded="md">

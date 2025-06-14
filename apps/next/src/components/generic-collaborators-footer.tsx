@@ -1,13 +1,8 @@
-import {
-  Avatar,
-  Box,
-  type BoxProps,
-  Center,
-  HStack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, type BoxProps, Center, HStack, Text } from "@chakra-ui/react";
 
 import { IconGhost3 } from "@tabler/icons-react";
+
+import { Avatar } from "./avatar";
 
 export interface GenericCollaboratorsFooterProps {
   total: number;
@@ -38,14 +33,12 @@ export const GenericCollaboratorsFooter: React.FC<
               bg: "gray.700",
               borderColor: darkBg,
             }}
-            icon={<></>}
-            getInitials={() => ""}
             key={avatar}
             borderWidth={3}
-            name={avatar}
             src={avatar}
-            width="30px"
-            height="30px"
+            imageWidth={30}
+            imageHeight={30}
+            alt="Collaborator avatar"
           />
         ))}
         {total > 5 && (

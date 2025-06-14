@@ -5,7 +5,6 @@ import { getProfileUrl } from "@quizfit/lib/profile-url";
 import type { User } from "@quizfit/prisma/client";
 
 import {
-  Avatar,
   Box,
   Button,
   ButtonGroup,
@@ -32,6 +31,7 @@ import {
   type TablerIconsProps,
 } from "@tabler/icons-react";
 
+import { Avatar } from "./avatar";
 import { MenuOptionPure } from "./menu-option";
 
 export interface MemberComponentAction {
@@ -141,7 +141,12 @@ export const MemberComponentRaw: React.FC<MemberComponentProps> = ({
           w={{ base: "full", md: "inherit" }}
         >
           <Skeleton rounded="full" fitContent isLoaded={!skeleton}>
-            <Avatar src={user?.image || undefined} width="36px" height="36px" />
+            <Avatar
+              src={user?.image}
+              imageWidth={36}
+              imageHeight={36}
+              alt="Member avatar"
+            />
           </Skeleton>
           <HStack spacing="4">
             <Tags isMobile />

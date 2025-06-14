@@ -1,11 +1,9 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { avatarUrl } from "@quizfit/lib/avatar";
 import type { User } from "@quizfit/prisma/client";
 
 import {
-  Avatar,
   Box,
   HStack,
   Heading,
@@ -17,6 +15,7 @@ import {
 
 import { IconDiscountCheck, IconRosetteFilled } from "@tabler/icons-react";
 
+import { Avatar } from "../../components/avatar";
 import { UsernameLink } from "../../components/username-link";
 import { formatDeciseconds, getRelativeTime } from "../../utils/time";
 
@@ -70,7 +69,12 @@ export const LeaderboardEntry: React.FC<LeaderboardEntryProps> = ({
       </Box>
       <Box w="full" display="table-cell" verticalAlign="middle">
         <HStack spacing="4">
-          <Avatar src={avatarUrl(user)} width="40px" height="40px" />
+          <Avatar
+            src={user.image}
+            imageWidth={40}
+            imageHeight={40}
+            alt="User avatar"
+          />
           <Stack spacing="2px">
             <HStack spacing="1">
               <UsernameLink username={user.username} />

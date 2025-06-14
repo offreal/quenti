@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import { env } from "@quizfit/env/client";
-import { avatarUrl } from "@quizfit/lib/avatar";
 import { outfit } from "@quizfit/lib/chakra-theme";
 import { APP_URL } from "@quizfit/lib/constants/url";
 import { useShortcut } from "@quizfit/lib/hooks/use-shortcut";
@@ -12,9 +11,9 @@ import type { StudySetType, User } from "@quizfit/prisma/client";
 import { api } from "@quizfit/trpc";
 
 import {
-  Avatar,
   Box,
   Center,
+  Avatar as ChakraAvatar,
   Flex,
   HStack,
   Input,
@@ -51,6 +50,7 @@ import { useDevActions } from "../hooks/use-dev-actions";
 import { useIsTeacher } from "../hooks/use-is-teacher";
 import { useMe } from "../hooks/use-me";
 import { plural } from "../utils/string";
+import { Avatar } from "./avatar";
 
 export interface CommandMenuProps {
   isOpen: boolean;
@@ -588,9 +588,10 @@ const OptionComp: React.FC<OptionCompProps> = ({
         {author && type == "Default" ? (
           <HStack>
             <Avatar
-              src={avatarUrl(author)}
+              src={author.image}
               size="2xs"
               className="highlight-block"
+              alt="Author avatar"
             />
             <Text fontSize="xs" color={baseText} className="highlight-block">
               {author.username}
@@ -617,7 +618,7 @@ const OptionComp: React.FC<OptionCompProps> = ({
               </svg>
               {collaborators.map((c, i) => (
                 // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
-                <Avatar
+                <ChakraAvatar
                   key={i}
                   src={c}
                   width="16px"
