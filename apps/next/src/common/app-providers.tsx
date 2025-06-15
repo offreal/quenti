@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Session } from "next-auth";
 import type { AppProps as NextAppProps } from "next/app";
 import dynamic from "next/dynamic";
@@ -20,17 +22,6 @@ const EventListeners = dynamic(
   {
     ssr: false,
   },
-);
-
-// Load Analytics only in production
-const Analytics = dynamic(
-  () => import("@vercel/analytics/next").then((mod) => mod.Analytics),
-  { ssr: false },
-);
-
-const SpeedInsights = dynamic(
-  () => import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
-  { ssr: false },
 );
 
 // We can't use no-ssr boundary splitting for providers with children otherwise SEO and rendering will be broken
