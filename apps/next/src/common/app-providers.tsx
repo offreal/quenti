@@ -22,6 +22,17 @@ const EventListeners = dynamic(
   },
 );
 
+// Load Analytics only in production
+const Analytics = dynamic(
+  () => import("@vercel/analytics/next").then((mod) => mod.Analytics),
+  { ssr: false },
+);
+
+const SpeedInsights = dynamic(
+  () => import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
+  { ssr: false },
+);
+
 // We can't use no-ssr boundary splitting for providers with children otherwise SEO and rendering will be broken
 // Unfortunately, our bundle size is a bit larger but ttfb is still decent
 const TelemetryProvider = dynamic(() =>
@@ -65,6 +76,12 @@ export const AppProviders = (props: AppPropsWithChildren) => {
           <SessionListener />
           <EventListeners />
           {props.children}
+          {env.NEXT_PUBLIC_DEPLOYMENT === "production" && (
+            <>
+              <Analytics />
+              <SpeedInsights />
+            </>
+          )}
         </SessionProvider>
       </TelemetryProvider>
     </ChakraProvider>

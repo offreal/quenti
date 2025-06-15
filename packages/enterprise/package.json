@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@clickhouse/client": "^0.2.2",
-    "@quizfit/core": "workspace:*",
     "@quizfit/env": "workspace:*",
     "@quizfit/prisma": "workspace:*",
     "@upstash/redis": "^1.22.1"
